@@ -1,1705 +1,913 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khám phá Nha Trang - Thiên đường biển đảo</title>
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/qvjz8QFW/Logo.png" />
-    <meta name="author" content="Dr.Gifter">
-    <meta name="description"
-        content="Chào mừng đến với Nha Trang, thành phố biển xinh đẹp của Việt Nam. Khám phá các địa điểm du lịch, ẩm thực và văn hóa đặc sắc.">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
-
-:root {
-    --primary-color: #2D6A4F;
-    --secondary-color: #1A759F;
-    --accent-color: #D4A373;
-    --gradient: linear-gradient(135deg, #17aa21, #27e5e8);
-    --dark-color: #1B1B1B;
-    --light-color: #F8F9FA;
-    --white: #ffffff;
-    --border-radius-lg: 30px;
-    --border-radius-md: 18px;
-    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.04);
-    --shadow-elegant: 0 20px 60px rgba(0, 0, 0, 0.08);
-    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-    line-height: 1.7;
-    overflow-x: hidden;
-    background-image:
-        radial-gradient(circle at 0% 0%, rgba(45, 106, 79, 0.02) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(26, 117, 159, 0.02) 0%, transparent 50%);
-}
-
-h1,
-h2,
-h3,
-.logo {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.section-title h2 {
-    font-family: 'Lora', serif;
-    font-style: italic;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Navbar - Glassmorphism Floating */
-.navbar {
-    position: fixed;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    z-index: 1000;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.navbar.scrolled {
-    top: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 50px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 200, 83, 0.1);
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: var(--white);
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-.navbar.scrolled .logo {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.nav-links {
-    display: flex;
-    gap: 40px;
-}
-
-.nav-links a {
-    color: var(--white);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    position: relative;
-    padding: 5px 0;
-}
-
-.navbar.scrolled .nav-links a {
-    color: var(--dark-color);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: var(--gradient);
-    transition: var(--transition);
-    transform: translateX(-50%);
-    border-radius: 10px;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.navbar.scrolled .nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    color: var(--white);
-    cursor: pointer;
-    transition: var(--transition);
-    z-index: 1001;
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.navbar.scrolled .menu-toggle {
-    color: var(--dark-color);
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Hero Section Slider - Ken Burns Effect */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    color: var(--white);
-    overflow: hidden;
-}
-
-.hero-bg-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.hero-bg.active {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Overlay for text contrast */
-.hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 5;
-    max-width: 900px;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-size: 4.5rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    line-height: 1.1;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero p {
-    font-size: 1.3rem;
-    max-width: 650px;
-    margin: 0 auto 40px;
-    opacity: 0.95;
-    line-height: 1.6;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 35px;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.btn-primary {
-    background: var(--white);
-    color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-.btn-gradient {
-    background: var(--gradient);
-    color: var(--white);
-}
-
-.btn-gradient:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
-}
-
-/* Sections and Dividers */
-section {
-    padding: 120px 8%;
-    background: var(--white);
-    position: relative;
-}
-
-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: var(--gradient);
-    z-index: 2;
-}
-
-section:nth-child(even) {
-    background: #f8fbff;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 80px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.section-title.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section-title h2 {
-    font-size: 3rem;
-    color: var(--dark-color);
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.underline {
-    width: 80px;
-    height: 6px;
-    background: var(--gradient);
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-.about-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 60px 0;
-}
-
-.about-text {
-    max-width: 1000px;
-    background: transparent;
-    padding: 20px;
-    position: relative;
-}
-
-.about-segment {
-    background: var(--white);
-    border: 2px solid rgba(26, 117, 159, 0.1);
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 25px;
-    transition: var(--transition);
-    position: relative;
-    box-shadow: var(--shadow-soft);
-    opacity: 0;
-    transform: translateY(50px);
-}
-
-.about-segment.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.about-segment:hover {
-    transform: translateY(-10px);
-    border-color: var(--secondary-color);
-    box-shadow: var(--shadow-elegant);
-}
-
-.about-segment p {
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.8;
-    margin-bottom: 0;
-    transition: var(--transition);
-}
-
-.read-more-btn {
-    display: none;
-    /* Hidden by default, shown via media query */
-    color: var(--secondary-color);
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.read-more-btn:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .about-segment p {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Tài Nguyên Số</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .read-more-btn {
-        display: inline-block;
+    body {
+      background: #f5f7fb;
+      color: #1f2937;
     }
 
-    .about-segment.fully-expanded .read-more-btn {
-        display: none;
-    }
-}
-
-.highlight-segment {
-    border: 2px dashed var(--secondary-color);
-    background: rgba(26, 117, 159, 0.03);
-}
-
-.about-segment::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    right: 40px;
-    width: 60px;
-    height: 4px;
-    background: var(--gradient);
-    border-radius: 10px;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.about-segment:hover::after {
-    opacity: 1;
-    bottom: 20px;
-}
-
-.about-text::before {
-    content: '"';
-    position: absolute;
-    top: -20px;
-    left: 40px;
-    font-size: 8rem;
-    color: var(--secondary-color);
-    opacity: 0.1;
-    font-family: 'Lora', serif;
-}
-
-.about-text p {
-    font-size: 1.15rem;
-    color: #444;
-    line-height: 1.9;
-    margin-bottom: 40px;
-}
-
-.about-stats {
-    display: flex;
-    gap: 30px;
-}
-
-.achievements-highlight {
-    position: relative;
-    padding-left: 15px;
-}
-
-.achievements-highlight::before {
-    content: '';
-    position: absolute;
-    left: 36px;
-    top: 10px;
-    width: 2px;
-    height: calc(100% - 20px);
-    background: var(--secondary-color);
-    opacity: 0.2;
-}
-
-.milestone {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 45px;
-    position: relative;
-    transition: var(--transition);
-}
-
-.milestone:last-child {
-    margin-bottom: 0;
-}
-
-.milestone-icon {
-    width: 45px;
-    height: 45px;
-    background: var(--white);
-    border: 2px solid var(--secondary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--secondary-color);
-    font-size: 1rem;
-    z-index: 2;
-    transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.milestone:hover .milestone-icon {
-    background: var(--secondary-color);
-    color: var(--white);
-    transform: scale(1.15) rotate(10deg);
-}
-
-.milestone-content h4 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.milestone-content p {
-    font-size: 1rem !important;
-    color: #666 !important;
-    line-height: 1.6 !important;
-}
-
-@media (max-width: 768px) {
-    .milestone-content p {
-        display: none;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .milestone-content h4 {
-        margin-bottom: 0;
-        font-size: 1.1rem;
+    .container {
+      width: min(1200px, 95%);
+      margin: 0 auto;
     }
 
-    .milestone {
-        margin-bottom: 25px;
-        align-items: center;
-    }
-}
-
-.milestone-content {
-    padding-top: 5px;
-}
-
-
-.milestone {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.milestone.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.milestone:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.milestone:nth-child(2) {
-    transition-delay: 0.3s;
-}
-
-.milestone:nth-child(3) {
-    transition-delay: 0.5s;
-}
-
-/* Grid Layouts - Responsive 4 for Desktop, 2 for Small */
-.grid {
-    display: grid;
-    gap: 30px;
-}
-
-.grid-4 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.card.card-hidden {
-    display: none;
-}
-
-@media (max-width: 1200px) {
-    .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-
-    .grid-4,
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Card Styles - Premium Version */
-.card {
-    background: var(--white);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition);
-    opacity: 0;
-    transform: translateY(40px);
-    border: 1px solid rgba(0, 0, 0, 0.02);
-}
-
-.card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card:hover {
-    transform: translateY(-15px);
-    box-shadow: var(--shadow-elegant);
-    border-color: rgba(45, 106, 79, 0.2);
-}
-
-.card-img {
-    height: 280px;
-    margin: 15px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.05);
-    /* Soft inner shadow */
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Category Badge on Card */
-.card-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
-    color: var(--primary-color);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 50px;
-    z-index: 5;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover .card-img img {
-    transform: scale(1.15) rotate(1deg);
-    /* Slight rotation for the dynamic feel */
-}
-
-/* Overlay gradient for depth */
-.card-img::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.card:hover .card-img::after {
-    opacity: 1;
-}
-
-.card-content {
-    padding: 10px 35px 35px;
-}
-
-.card-content h3 {
-    font-size: 1.5rem;
-    color: var(--dark-color);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.card-content p {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-/* Detail Page Structure */
-.detail-banner {
-    height: 60vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 50px;
-    padding-left: 8%;
-}
-
-.detail-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-}
-
-.detail-banner h1 {
-    color: var(--white);
-    font-size: 3.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.detail-container {
-    display: flex;
-    gap: 40px;
-    padding: 50px 8%;
-}
-
-.detail-main {
-    flex: 2;
-}
-
-.detail-sidebar {
-    flex: 1;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.gallery img:hover {
-    opacity: 0.8;
-}
-
-.info-box {
-    background: var(--white);
-    padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 30px;
-}
-
-.info-item {
-    margin-bottom: 15px;
-}
-
-.info-item i {
-    color: var(--primary-color);
-    margin-right: 10px;
-}
-
-.map {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    height: 300px;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    /* HEADER */
+    .topbar {
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 99;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .topbar-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr 260px;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 0;
     }
-}
 
-/* Responsive */
-@media (max-width: 1024px) {
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #dc2626;
+    }
 
-    .grid-4,
-    .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
+    .logo span {
+      color: #2563eb;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 14px 16px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search-box button {
+      border: none;
+      background: #2563eb;
+      color: #fff;
+      padding: 14px 18px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .search-box button:hover {
+      background: #1d4ed8;
+    }
+
+    .header-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .currency,
+    .action-btn {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .action-btn:hover,
+    .currency:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
+
+    /* MENU */
+    .menu-wrap {
+      background: linear-gradient(90deg, #dc2626, #2563eb);
+      margin-top: 12px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .menu a {
+      color: #fff;
+      padding: 14px 18px;
+      font-weight: 600;
+      transition: 0.25s;
+      display: inline-block;
+    }
+
+    .menu a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* HERO */
+    .hero {
+      margin-top: 18px;
+      background: linear-gradient(135deg, #ffffff, #eef4ff);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
     }
 
     .hero h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 80px 5%;
+      font-size: 34px;
+      line-height: 1.25;
+      margin-bottom: 14px;
     }
 
-    .navbar {
-        padding: 15px 25px;
-        width: 95%;
-        border-radius: 30px;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: calc(100% + 15px);
-        right: 0;
-        width: 250px;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(25px) saturate(180%);
-        -webkit-backdrop-filter: blur(25px) saturate(180%);
-        flex-direction: column;
-        padding: 25px;
-        gap: 10px;
-        text-align: center;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        border-radius: 25px;
-        display: none;
-        opacity: 0;
-        transform: translateY(20px) scale(0.9);
-        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        z-index: 1000;
-        transform-origin: top center;
-    }
-
-    .nav-links.active {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    .nav-links li {
-        width: 100%;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .nav-links.active li {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Staggered entrance */
-    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
-    .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
-    .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
-
-    .nav-links a {
-        color: var(--dark-color) !important;
-        font-size: 1.05rem;
-        font-weight: 700;
-        padding: 12px 15px;
-        display: block;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        background: rgba(45, 106, 79, 0.08);
-        color: var(--primary-color) !important;
-    }
-
-    .navbar:not(.scrolled) .nav-links {
-        background: rgba(255, 255, 255, 0.85);
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .grid-4,
-    .grid-3,
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
+    .hero h1 span {
+      color: #dc2626;
     }
 
     .hero p {
-        font-size: 1.1rem;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 18px;
     }
 
-    .about-wrapper {
-        margin: 40px 0;
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .about-text {
-        padding: 60px 30px;
-        border-radius: 30px;
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.25s;
     }
 
-    .detail-container {
+    .btn-primary {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.10);
+      border: 1px solid #e5e7eb;
+    }
+
+    .hero-card h3 {
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .hero-card ul {
+      padding-left: 18px;
+      color: #374151;
+      line-height: 1.9;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      margin: 28px 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-title h2 {
+      font-size: 26px;
+      color: #111827;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* CATEGORIES */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .category-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px 12px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+      transition: 0.25s;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 26px rgba(37,99,235,0.12);
+      border-color: #bfdbfe;
+    }
+
+    .category-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #dbeafe, #fee2e2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 24px;
+    }
+
+    .category-card h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .category-card span {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .view-more-wrap {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .view-more-btn {
+      border: none;
+      background: #111827;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .view-more-btn:hover {
+      background: #000;
+      transform: translateY(-2px);
+    }
+
+    /* PRODUCTS */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+      border: 1px solid #e5e7eb;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.10);
+    }
+
+    .product-thumb {
+      height: 190px;
+      background: linear-gradient(135deg, #dbeafe, #fee2e2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    .product-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .product-code {
+      font-size: 13px;
+      color: #6b7280;
+      background: #f3f4f6;
+      padding: 6px 10px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: 700;
+      min-height: 48px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 14px;
+      color: #4b5563;
+      flex-wrap: wrap;
+    }
+
+    .stock {
+      color: #059669;
+      font-weight: 700;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 800;
+      color: #dc2626;
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .buy-btn,
+    .detail-btn {
+      border: none;
+      padding: 12px 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .buy-btn {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .buy-btn:hover {
+      background: #b91c1c;
+    }
+
+    .detail-btn {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .detail-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* FEATURE BAR */
+    .feature-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .feature-item {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+    }
+
+    .feature-item h4 {
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .feature-item p {
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      background: #111827;
+      color: #fff;
+      border-top-left-radius: 26px;
+      border-top-right-radius: 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 20px;
+      padding: 34px 0;
+    }
+
+    .footer-col h3,
+    .footer-col h4 {
+      margin-bottom: 14px;
+    }
+
+    .footer-col p,
+    .footer-col li,
+    .footer-col a {
+      color: #d1d5db;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      padding: 14px 0 20px;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 1024px) {
+      .topbar-inner,
+      .hero,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .header-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .category-grid,
+      .product-grid,
+      .feature-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .menu {
         flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .product-actions {
+        grid-template-columns: 1fr;
+      }
     }
-}
-
-/* Footer */
-footer {
-    background: var(--dark-color);
-    color: var(--white);
-    padding: 50px 8% 20px;
-    text-align: center;
-}
-
-.footer-content {
-    margin-bottom: 30px;
-}
-
-.copyright {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 0.9rem;
-    color: #999;
-}
-
-/* Modal Styles */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal-content {
-    background: var(--white);
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 30px;
-    position: relative;
-    overflow: hidden;
-    transform: scale(0.8) translateY(50px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1) translateY(0);
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2.5rem;
-    color: var(--dark-color);
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-}
-
-.close-modal:hover {
-    color: var(--secondary-color);
-    transform: rotate(90deg);
-}
-
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.modal-img {
-    width: 100%;
-    height: 480px;
-    position: relative;
-    background: #000;
-}
-
-.modal-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.modal-info {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-info h2 {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.modal-info p {
-    color: #555;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    margin-top: 25px;
-}
-
-.modal-actions {
-    margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-    .modal-body {
-        flex-direction: column;
-    }
-
-    .modal-img {
-        height: 350px;
-    }
-
-    .modal-info {
-        padding: 30px;
-    }
-
-    .modal-info h2 {
-        font-size: 1.8rem;
-    }
-}
-
-.modal-gallery {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 10px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    z-index: 5;
-}
-
-.modal-gallery img {
-    height: 60px;
-    width: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.modal-gallery img:hover {
-    transform: translateY(-5px);
-    border-color: var(--white);
-}
-
-@media (max-width: 768px) {
-    .modal-gallery {
-        bottom: 15px;
-        padding: 6px;
-        gap: 8px;
-    }
-
-    .modal-gallery img {
-        height: 45px;
-        width: 60px;
-    }
-}
-</style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </style>
 </head>
-
 <body>
-    <nav class="navbar">
-        <div class="logo">TPNHATRANG</div>
-        <ul class="nav-links">
-            <li><a href="#home">Trang chủ</a></li>
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#places">Địa điểm</a></li>
-            <li><a href="#food">Ẩm thực</a></li>
-        </ul>
-        <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </nav>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="logo">Shop<span>Clone</span></div>
 
-    <section id="home" class="hero">
-        <div class="hero-bg-container">
-            <div id="bg1" class="hero-bg active"></div>
-            <div id="bg2" class="hero-bg"></div>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm, tài khoản, tài nguyên số..." />
+          <button onclick="searchProducts()">Tìm</button>
         </div>
-        <div class="hero-content">
-            <h1>Khám phá Nha Trang</h1>
-            <p>Tận hưởng vẻ đẹp của những bãi cát trắng mịn, dòng nước xanh trong vắt và văn hóa đặc sắc tại thủ phủ du
-                lịch biển miền Trung.</p>
-            <a href="#about" class="btn btn-primary">Khám phá ngay</a>
-        </div>
-        <div class="scroll-indicator"></div>
-    </section>
 
-    <section id="about" class="fade-in">
-        <div class="section-title">
-            <h2>Hành Trình Khám Phá Nha Trang</h2>
-            <div class="underline"></div>
+        <div class="header-actions">
+          <select class="currency">
+            <option>VND</option>
+            <option>USD</option>
+          </select>
+          <button class="action-btn">🛒 Giỏ hàng</button>
+          <button class="action-btn">🔐 Đăng nhập</button>
         </div>
-        <div class="about-wrapper">
-            <div class="about-text">
-                <div class="about-segment fade-in">
-                    <p>Nha Trang là viên ngọc quý của miền Trung, quyến rũ du khách bởi vẻ đẹp của 19 hòn đảo nằm trong
-                        top những vịnh biển đẹp nhất thế giới (WorldBays). Được National Geographic vinh danh nhờ hệ
-                        sinh thái đa dạng, thành phố là sự giao thoa tuyệt mỹ giữa di tích Chăm Pa cổ kính và nhịp sống
-                        đô thị hiện đại, xứng danh "thiên đường nghỉ dưỡng" đẳng cấp quốc tế.</p>
-                    <a href="javascript:void(0)" class="read-more-btn">Đọc thêm</a>
-                </div>
+      </div>
 
-                <div class="about-segment highlight-segment fade-in">
-                    <div class="achievements-highlight">
-                        <div class="achievement-item milestone">
-                            <div class="milestone-icon">
-                                <i class="fa-solid fa-trophy"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Thành viên Câu lạc bộ các Vịnh biển đẹp nhất thế giới</h4>
-                                <p>Tự hào gia nhập hàng ngũ những vịnh biển quyến rũ nhất hành tinh, khẳng định vị thế
-                                    du lịch Việt Nam trên bản đồ quốc tế.</p>
-                            </div>
-                        </div>
-                        <div class="achievement-item milestone">
-                            <div class="milestone-icon">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Top 10 điểm đến mới nổi hàng đầu Châu Á</h4>
-                                <p>Được TripAdvisor bình chọn là một trong những thành phố biển đáng ghé thăm nhất với
-                                    sự kết hợp hoàn hảo giữa nghỉ dưỡng và di sản.</p>
-                            </div>
-                        </div>
-                        <div class="achievement-item milestone">
-                            <div class="milestone-icon">
-                                <i class="fa-solid fa-medal"></i>
-                            </div>
-                            <div class="milestone-content">
-                                <h4>Đô thị loại I với quy hoạch hiện đại</h4>
-                                <p>Trung tâm kinh tế - văn hoá trọng điểm khu vực miền Trung, sở hữu hạ tầng du lịch
-                                    đẳng cấp và không gian đô thị xanh.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="places" class="featured-places">
-        <div class="section-title">
-            <h2>Địa điểm nổi bật</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="grid grid-4">
-            <div class="card fade-in" data-category="diadiem" data-folder="vinwonder">
-                <div class="card-img">
-                    <div class="card-badge">Địa điểm</div>
-                    <img src="https://fastly.picsum.photos/id/723/800/600.jpg" alt="VinWonders Nha Trang">
-                </div>
-                <div class="card-content">
-                    <h3>VinWonders Nha Trang</h3>
-                    <p>Thiên đường vui chơi giải trí hàng đầu Việt Nam với công viên nước, vườn thú và các trò chơi cảm
-                        giác mạnh.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="diadiem" data-folder="thapbaponagar">
-                <div class="card-img">
-                    <div class="card-badge">Địa điểm</div>
-                    <img src="https://fastly.picsum.photos/id/419/800/600.jpg" alt="Tháp Bà Ponagar">
-                </div>
-                <div class="card-content">
-                    <h3>Tháp Bà Ponagar</h3>
-                    <p>Quần thể kiến trúc Chăm Pa cổ kính bậc nhất, mang đậm dấu ấn lịch sử và tâm linh giữa lòng thành
-                        phố.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="diadiem" data-folder="thaptramhuong">
-                <div class="card-img">
-                    <div class="card-badge">Địa điểm</div>
-                    <img src="https://fastly.picsum.photos/id/121/800/600.jpg" alt="Tháp Trầm Hương">
-                </div>
-                <div class="card-content">
-                    <h3>Tháp Trầm Hương</h3>
-                    <p>Biểu tượng kiến trúc độc đáo của Nha Trang, nằm ngay quảng trường 2/4 thơ mộng sát biển.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="diadiem" data-folder="vienhaiduonghoc">
-                <div class="card-img">
-                    <div class="card-badge">Địa điểm</div>
-                    <img src="https://fastly.picsum.photos/id/82/800/600.jpg" alt="Viện Hải Dương Học">
-                </div>
-                <div class="card-content">
-                    <h3>Viện Hải Dương Học</h3>
-                    <p>Khám phá thế giới đại dương phong phú với hàng ngàn mẫu vật kỳ thú tại bảo tàng đa dạng sinh học
-                        lớn nhất.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="diadiem" data-folder="nhathoda">
-                <div class="card-img">
-                    <div class="card-badge">Địa điểm</div>
-                    <img src="https://fastly.picsum.photos/id/625/800/600.jpg" alt="Nhà thờ Đá">
-                </div>
-                <div class="card-content">
-                    <h3>Nhà thờ Chánh tòa</h3>
-                    <p>Vẻ đẹp kiến trúc Gothic Pháp uy nghiêm giữa lòng thành phố biển với lịch sử lâu đời và không gian
-                        thanh tịnh.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="diadiem" data-folder="nhahatdo">
-                <div class="card-img">
-                    <div class="card-badge">Địa điểm</div>
-                    <img src="https://fastly.picsum.photos/id/479/800/600.jpg" alt="Nhà hát Đó">
-                </div>
-                <div class="card-content">
-                    <h3>Nhà hát Đó</h3>
-                    <p>Kiến kiến trúc hiện đại lấy cảm hứng từ chiếc "Đó" bắt cá, một biểu tượng nghệ thuật mới lạ tại
-                        Nha Trang.</p>
-                </div>
-            </div>
-        </div>
-        <div class="load-more-container" style="text-align: center; margin-top: 50px;">
-            <a href="javascript:void(0)" class="btn btn-gradient" id="loadMorePlaces">Xem thêm địa điểm</a>
-        </div>
-    </section>
-
-    <section id="food" class="cuisine">
-        <div class="section-title">
-            <h2>Ẩm thực đặc sắc</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="grid grid-4">
-            <div class="card fade-in" data-category="amthuc" data-folder="nemnuong">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/194/800/600.jpg" alt="Nem nướng Nha Trang">
-                </div>
-                <div class="card-content">
-                    <h3>Nem nướng</h3>
-                    <p>Món ăn đặc sản nức tiếng với nem nướng thơm lừng, bánh tráng giòn và nước chấm bí truyền.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="amthuc" data-folder="bunca">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/14/800/600.jpg" alt="Bún chả cá Nha Trang">
-                </div>
-                <div class="card-content">
-                    <h3>Bún chả cá</h3>
-                    <p>Hương vị biển cả đậm đà trong tô bún chả cá tươi ngon, nước dùng trong vắt thanh ngọt.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="amthuc" data-folder="banhcan">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/422/800/600.jpg" alt="Bánh căn Nha Trang">
-                </div>
-                <div class="card-content">
-                    <h3>Bánh căn</h3>
-                    <p>Những chiếc bánh nhỏ xinh, giòn rụm bên ngoài kết hợp với nhân trứng, tôm, mực tươi rói.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="amthuc" data-folder="haisan">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/285/800/600.jpg" alt="Hải sản tươi sống">
-                </div>
-                <div class="card-content">
-                    <h3>Hải sản tươi</h3>
-                    <p>Thưởng thức vô vàn loại hải sản trực tiếp từ biển cả: tôm hùm, cua, ghẹ, ốc... tại các làng chài.
-                    </p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="amthuc" data-folder="yensao">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/238/800/600.jpg" alt="Yến sào Nha Trang">
-                </div>
-                <div class="card-content">
-                    <h3>Yến sào</h3>
-                    <p>Sản vật quý giá của vùng biển Khánh Hòa, được xem là "Vàng trắng" với giá trị dinh dưỡng cao.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="amthuc" data-folder="bunsua">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/675/800/600.jpg" alt="Bún sứa Nha Trang">
-                </div>
-                <div class="card-content">
-                    <h3>Bún sứa</h3>
-                    <p>Món ăn thanh mát đặc trưng with sứa tươi giòn sần sật và nước dùng ngọt thanh từ cá biển.</p>
-                </div>
-            </div>
-            <div class="card fade-in" data-category="amthuc" data-folder="banhuot">
-                <div class="card-img" style="height: 200px;">
-                    <div class="card-badge">Ẩm thực</div>
-                    <img src="https://fastly.picsum.photos/id/619/800/600.jpg" alt="Bánh ướt Diên Khánh">
-                </div>
-                <div class="card-content">
-                    <h3>Bánh ướt</h3>
-                    <p>Đặc sản vùng Diên Khánh với lớp bánh mỏng mướt, ăn kèm mỡ hành, tôm cháy và nước mắm đặc biệt.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="load-more-container" style="text-align: center; margin-top: 50px;">
-            <a href="javascript:void(0)" class="btn btn-gradient" id="loadMoreFood">Xem thêm món ngon</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="logo" style="color: white; margin-bottom: 20px;">TPNHATRANG</div>
-            <p>Khám phá vẻ đẹp bất tận của thành phố biển xinh đẹp.</p>
-        </div>
-        <div class="copyright">
-            &copy; 2026 Du lịch Nha Trang - Dr.Gifter
-        </div>
-    </footer>
-
-    <div id="modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <div class="modal-img">
-                    <img id="modalImg" src="" alt="Detail Image">
-                    <div id="modalGallery" class="modal-gallery">
-                    </div>
-                </div>
-                <div class="modal-info">
-                    <h2 id="modalTitle">Tên địa điểm</h2>
-                    <div class="underline"></div>
-                    <p id="modalDesc">Mô tả chi tiết sẽ hiển thị ở đây.</p>
-                    <div class="modal-meta" style="margin-top: 20px; color: #666; font-size: 0.95rem;">
-                        <p id="modalLocation"><i class="fa-solid fa-location-dot"
-                                style="color: var(--secondary-color); margin-right: 8px;"></i> Vị trí: Đang tải...</p>
-                        <p id="modalHours" style="margin-top: 8px;"><i class="fa-solid fa-clock"
-                                style="color: var(--secondary-color); margin-right: 8px;"></i> Giờ mở cửa: Đang tải...
-                        </p>
-                    </div>
-                    <div id="modalMap" class="modal-map"
-                        style="margin-top: 25px; border-radius: 15px; overflow: hidden; height: 300px; border: 1px solid #eee;">
-                        <iframe id="mapIframe" width="100%" height="100%" frameborder="0" style="border:0;"
-                            allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="menu-wrap">
+        <nav class="menu">
+          <a href="#">Trang chủ</a>
+          <a href="#">Sản phẩm</a>
+          <a href="#">Nạp tiền</a>
+          <a href="#">Tài liệu</a>
+          <a href="#">Tiện ích</a>
+          <a href="#">Kiếm tiền</a>
+          <a href="#">Facebook</a>
+          <a href="#">Demo</a>
+          <a href="#">Test</a>
+        </nav>
+      </div>
     </div>
+  </header>
 
-    <script src="script.js"></script>
-<script>document.addEventListener('DOMContentLoaded', () => {
-    const initLoadMore = (gridSelector, btnId) => {
-        const grid = document.querySelector(gridSelector);
-        if (!grid) return;
-        const cards = Array.from(grid.querySelectorAll('.card'));
-        const btn = document.getElementById(btnId);
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Hệ thống bán <span>tài nguyên số</span> tự động, giao hàng nhanh</h1>
+        <p>
+          Giao diện hiện đại, dễ dùng, phù hợp bán tài khoản, API, tool, tài liệu, source code,
+          phần mềm và nhiều loại tài nguyên số khác. Tối ưu responsive cho cả desktop và mobile.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Mua ngay</a>
+          <a href="#" class="btn-secondary">Xem sản phẩm</a>
+        </div>
+      </div>
 
-        let initialCount = window.innerWidth > 1024 ? 3 : 2;
-        let currentCount = initialCount;
+      <div class="hero-card">
+        <h3>Thông tin nổi bật</h3>
+        <ul>
+          <li>Bán hàng tự động 24/7</li>
+          <li>Quản lý sản phẩm theo danh mục</li>
+          <li>Tìm kiếm nhanh và giao diện rõ ràng</li>
+          <li>Responsive đẹp trên điện thoại</li>
+          <li>Phù hợp shop tài nguyên số</li>
+        </ul>
+      </div>
+    </section>
 
-        cards.forEach((card, index) => {
-            if (index >= initialCount) {
-                card.classList.add('card-hidden');
-            }
-        });
+    <section>
+      <div class="section-title">
+        <div>
+          <h2>Danh mục nổi bật</h2>
+          <p>Nhiều nhóm sản phẩm được hiển thị dạng icon bo góc hiện đại</p>
+        </div>
+      </div>
 
-        if (cards.length <= initialCount) {
-            btn.parentElement.style.display = 'none';
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-icon">💻</div>
+          <h4>Source Code</h4>
+          <span>125 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🔑</div>
+          <h4>Tài khoản</h4>
+          <span>84 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">📘</div>
+          <h4>Tài liệu</h4>
+          <span>63 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">⚙️</div>
+          <h4>Tool</h4>
+          <span>40 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🤖</div>
+          <h4>API & AI</h4>
+          <span>57 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">📈</div>
+          <h4>Marketing</h4>
+          <span>33 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🌐</div>
+          <h4>Website</h4>
+          <span>91 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🎨</div>
+          <h4>Design</h4>
+          <span>52 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">📱</div>
+          <h4>App Mobile</h4>
+          <span>29 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🧩</div>
+          <h4>Plugin</h4>
+          <span>44 sản phẩm</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">💳</div>
+          <h4>Nạp tiền</h4>
+          <span>12 dịch vụ</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🎁</div>
+          <h4>Khuyến mãi</h4>
+          <span>19 ưu đãi</span>
+        </div>
+      </div>
+
+      <div class="view-more-wrap">
+        <button class="view-more-btn">Xem thêm danh mục</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <div>
+          <h2>Sản phẩm mới</h2>
+          <p>Danh sách sản phẩm hiển thị dạng card theo lưới</p>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <div class="product-card" data-name="Source code website bán hàng">
+          <div class="product-thumb">SC</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP001</div>
+            <div class="product-name">Source code website bán hàng hiện đại</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 24</span>
+              <span>Loại: Source</span>
+            </div>
+            <div class="price">299.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="Tài khoản Canva Pro">
+          <div class="product-thumb">CV</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP002</div>
+            <div class="product-name">Tài khoản Canva Pro 1 năm</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 120</span>
+              <span>Loại: Tài khoản</span>
+            </div>
+            <div class="price">89.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="API Chat AI">
+          <div class="product-thumb">AI</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP003</div>
+            <div class="product-name">Gói API Chat AI cho website và app</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 55</span>
+              <span>Loại: API</span>
+            </div>
+            <div class="price">199.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="Tài liệu marketing Facebook">
+          <div class="product-thumb">FB</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP004</div>
+            <div class="product-name">Bộ tài liệu marketing Facebook thực chiến</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 67</span>
+              <span>Loại: Tài liệu</span>
+            </div>
+            <div class="price">59.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="Tool đăng bài tự động">
+          <div class="product-thumb">TL</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP005</div>
+            <div class="product-name">Tool đăng bài tự động đa nền tảng</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 11</span>
+              <span>Loại: Tool</span>
+            </div>
+            <div class="price">149.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="Website landing page đẹp">
+          <div class="product-thumb">LP</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP006</div>
+            <div class="product-name">Website landing page bán hàng đẹp</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 39</span>
+              <span>Loại: Website</span>
+            </div>
+            <div class="price">129.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="Plugin WordPress premium">
+          <div class="product-thumb">WP</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP007</div>
+            <div class="product-name">Plugin WordPress premium tối ưu website</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 78</span>
+              <span>Loại: Plugin</span>
+            </div>
+            <div class="price">79.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-name="Bộ template thiết kế">
+          <div class="product-thumb">TK</div>
+          <div class="product-body">
+            <div class="product-code">Mã: SP008</div>
+            <div class="product-name">Bộ template thiết kế social media cao cấp</div>
+            <div class="product-meta">
+              <span class="stock">Còn: 42</span>
+              <span>Loại: Design</span>
+            </div>
+            <div class="price">99.000đ</div>
+            <div class="product-actions">
+              <button class="buy-btn">Mua ngay</button>
+              <button class="detail-btn">Chi tiết</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-bar">
+      <div class="feature-item">
+        <h4>Giao hàng tự động</h4>
+        <p>Hệ thống hỗ trợ bán tài nguyên số nhanh chóng, tiện lợi, hoạt động liên tục.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Giao diện hiện đại</h4>
+        <p>Thiết kế sạch sẽ, bo góc mềm, đổ bóng nhẹ, dễ nhìn trên mọi thiết bị.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Dễ mở rộng</h4>
+        <p>Có thể nâng cấp thêm backend, giỏ hàng, nạp tiền, đăng nhập và quản trị sản phẩm.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Tối ưu responsive</h4>
+        <p>Hiển thị tốt trên desktop, tablet và mobile với bố cục linh hoạt.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>ShopClone</h3>
+          <p>
+            Website bán tài nguyên số giao diện thương mại điện tử hiện đại,
+            phù hợp bán source code, tool, tài khoản, tài liệu và dịch vụ số.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên kết</h4>
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Tài liệu</a></li>
+            <li><a href="#">Nạp tiền</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hỗ trợ</h4>
+          <ul>
+            <li><a href="#">Điều khoản</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Hướng dẫn mua hàng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Thông tin</h4>
+          <ul>
+            <li>Email: support@shopclone.vn</li>
+            <li>Zalo: 0123 456 789</li>
+            <li>Facebook: fb.com/shopclone</li>
+            <li>Hỗ trợ: 24/7</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 ShopClone. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function searchProducts() {
+      const keyword = document.getElementById("searchInput").value.toLowerCase().trim();
+      const products = document.querySelectorAll(".product-card");
+
+      products.forEach(product => {
+        const name = product.getAttribute("data-name").toLowerCase();
+        if (name.includes(keyword) || keyword === "") {
+          product.style.display = "flex";
+        } else {
+          product.style.display = "none";
         }
-
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            let added = 0;
-            let addedLimit = window.innerWidth > 1024 ? 3 : 2;
-
-            for (let i = currentCount; i < cards.length && added < addedLimit; i++) {
-                cards[i].classList.remove('card-hidden');
-                setTimeout(() => {
-                    cards[i].classList.add('visible');
-                }, 50);
-                added++;
-            }
-            currentCount += added;
-
-            if (currentCount >= cards.length) {
-                btn.parentElement.style.display = 'none';
-            }
-        });
-    };
-
-    initLoadMore('#places .grid', 'loadMorePlaces');
-    initLoadMore('#food .grid', 'loadMoreFood');
-
-    const navbar = document.querySelector('.navbar');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            navbar.classList.toggle('menu-active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        });
+      });
     }
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            navbar.classList.remove('menu-active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-xmark');
-            }
-        });
+    document.getElementById("searchInput").addEventListener("keyup", function(e) {
+      if (e.key === "Enter") {
+        searchProducts();
+      }
     });
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    const options = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-
-    const bg1 = document.getElementById('bg1');
-    const bg2 = document.getElementById('bg2');
-
-    const getImageUrl = (seed, width = 800, height = 600) => {
-        let hash = 0;
-        for (let i = 0; i < seed.length; i++) {
-            hash = ((hash << 5) - hash) + seed.charCodeAt(i);
-            hash |= 0;
-        }
-        const id = 10 + (Math.abs(hash) % 900);
-        return `https://fastly.picsum.photos/id/${id}/${width}/${height}.jpg`;
-    };
-
-    const banners = [];
-
-    for (let i = 1; i <= 9; i++) {
-        banners.push(`https://fastly.picsum.photos/id/178/800/600.jpg'${banners[0]}')`;
-    bg2.style.backgroundImage = `url('${banners[1]}')`;
-
-    setInterval(() => {
-        currentBanner = (currentBanner + 1) % banners.length;
-        const nextBanner = banners[(currentBanner + 1) % banners.length];
-
-        if (isBg1Active) {
-            bg2.style.backgroundImage = `url('${banners[currentBanner]}')`;
-            bg2.classList.add('active');
-            bg1.classList.remove('active');
-        } else {
-            bg1.style.backgroundImage = `url('${banners[currentBanner]}')`;
-            bg1.classList.add('active');
-            bg2.classList.remove('active');
-        }
-
-        isBg1Active = !isBg1Active;
-    }, 5000);
-
-    // Modal Details Logic
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const closeModal = document.querySelector('.close-modal');
-
-    const extendedInfo = {
-        "VinWonders Nha Trang": {
-            desc: "VinWonders Nha Trang là thiên đường giải trí được thiết kế theo mô hình công viên giải trí 'tất cả trong một'. Tại đây có hệ thống cáp treo vượt biển, công viên nước hiện đại, thủy cung với hàng ngàn sinh vật quý hiếm và các show diễn nghệ thuật đẳng cấp thế giới.",
-            location: "Đảo Hòn Tre, Vĩnh Nguyên, Nha Trang",
-            hours: "08:30 - 21:00",
-            map: "VinWonders+Nha+Trang"
-        },
-        "Tháp Bà Ponagar": {
-            desc: "Quần thể kiến trúc Chăm Pa này là minh chứng sống động cho thời kỳ hưng thịnh của vương quốc cổ. Tháp nằm trên đồi Cù Lao, nơi du khách có thể ngắm toàn cảnh sông Cái và thưởng thức các vũ điệu Chăm truyền thống.",
-            location: "2 Tháng 4, Vĩnh Phước, Nha Trang",
-            hours: "06:00 - 18:00",
-            map: "Tháp+Bà+Ponagar"
-        },
-        "Tháp Trầm Hương": {
-            desc: "Được coi là biểu tượng lãng mạn của thành phố, Tháp Trầm Hương mang dáng dấp của búp sen hồng rực rỡ bên bờ biển. Bên trong tháp trưng bày nhiều hình ảnh và sản vật địa phương đặc trưng.",
-            location: "Quảng trường 2/4, Lộc Thọ, Nha Trang",
-            hours: "Mở cửa cả ngày (Bên trong: 08:00 - 20:00)",
-            map: "Tháp+Trầm+Hương"
-        },
-        "Viện Hải Dương Học": {
-            desc: "Là cơ sở nghiên cứu biển lớn nhất Đông Nam Á, nơi lưu giữ hơn 20.000 mẫu vật của hơn 4.000 loại sinh vật biển và động vật quý hiếm, nổi bật nhất là bộ xương cá voi khổng lồ dài 26m.",
-            location: "01 Cầu Đá, TP. Nha Trang",
-            hours: "06:00 - 18:00",
-            map: "Viện+Hải+dương+học"
-        },
-        "Nhà thờ Chánh tòa": {
-            desc: "Còn gọi là Nhà thờ Đá, công trình mang nét kiến trúc Gothic Pháp đậm nét with những khối đá sừng sững, cửa sổ màu rực rỡ và không gian yên bình, tôn nghiêm giữa lòng thành thị.",
-            location: "31 Thái Nguyên, Phước Tân, Nha Trang",
-            hours: "05:30 - 17:00",
-            map: "Nhà+thờ+Chánh+tòa+Nha+Trang"
-        },
-        "Nhà hát Đó": {
-            desc: "Một công trình nghệ thuật mang tính biểu tượng mới của Nha Trang. Với kiến trúc hình chiếc Đó khổng lồ, nơi đây tổ chức các show diễn Rối Mơ độc đáo kết hợp âm nhạc bản địa và nghệ thuật đương đại.",
-            location: "Vega City, Bãi Tiên, Nha Trang",
-            hours: "09:00 - 22:00",
-            map: "Nhà+hát+Đó"
-        },
-        "Yến sào": {
-            desc: "Yến sào Nha Trang được đánh giá có chất lượng tốt nhất nhờ điều kiện tự nhiên tại các đảo yến. Đây là thực phẩm bổ dưỡng cực kỳ quý giá, thường được dùng để bồi bổ sức khỏe và làm quà tặng sang trọng.",
-            location: "Sản xuất tại các đảo yến (Khánh Hòa)",
-            hours: "Các showroom mở cửa từ 08:00 - 21:00",
-            map: "Yến+Sào+Khánh+Hòa"
-        },
-        "Bún sứa": {
-            desc: "Sứa dùng làm bún phải là loại sứa chân, màu trắng đục, dày và giòn. Nước dùng được nấu từ cá liệt, không dầu mỡ, tạo nên vị thanh ngọt tự nhiên khó quên.",
-            location: "Các quán tại đường Phan Bội Châu, Ngô Gia Tự...",
-            hours: "07:00 - 22:00",
-            map: "Bún+sứa+Nha+Trang"
-        },
-        "Bánh ướt": {
-            desc: "Bánh ướt Diên Khánh nổi tiếng với độ mỏng, dai và mùi thơm của gạo mới. Ăn kèm xì dầu, mỡ hành và tôm cháy tạo nên hương vị mộc mạc nhưng cực kỳ lôi cuốn.",
-            location: "Thị trấn Diên Khánh, Nha Trang",
-            hours: "06:00 - 10:00 & 16:00 - 22:00",
-            map: "Bánh+ướt+Diên+Khánh"
-        }
-    };
-
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const title = card.querySelector('h3').innerText;
-            const img = card.querySelector('img').src;
-            const shortDesc = card.querySelector('p').innerText;
-            const category = card.dataset.category;
-            const folder = card.dataset.folder;
-
-            const info = extendedInfo[title] || { desc: shortDesc, location: "Đang cập nhật", hours: "Đang cập nhật", map: title };
-
-            modalTitle.innerText = title;
-            modalImg.src = img;
-            modalDesc.innerText = info.desc;
-            document.getElementById('modalLocation').innerHTML = `<i class="fa-solid fa-location-dot" style="color: var(--secondary-color); margin-right: 8px;"></i> Vị trí: ${info.location}`;
-            document.getElementById('modalHours').innerHTML = `<i class="fa-solid fa-clock" style="color: var(--secondary-color); margin-right: 8px;"></i> Giờ mở cửa: ${info.hours}`;
-            const mapIframe = document.getElementById('mapIframe');
-            mapIframe.src = `https://www.google.com/maps?q=${info.map}&output=embed`;
-
-            const gallery = document.getElementById('modalGallery');
-            gallery.innerHTML = '';
-
-            for (let i = 1; i <= 5; i++) {
-                const thumbImg = document.createElement('img');
-                thumbImg.src = `https://fastly.picsum.photos/id/576/800/600.jpg'click', () => {
-                    modalImg.src = thumbImg.src;
-                });
-                gallery.appendChild(thumbImg);
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            const modalBody = modal.querySelector('.modal-body');
-            if (modalBody) modalBody.scrollTop = 0;
-        });
-    });
-
-    function program(delay = 200) {
-        (function () {
-            const _b = (s) => decodeURIComponent(escape(atob(s)));
-            const _d = [
-                "QuG6o24gcXV54buBbiB0aHXhu5ljIHbhu4IgRHIuR2lmdGVy",
-                "VGlrdG9rOiBodHRwczovL3d3dy50aWt0b2suY29tL0Bkci5naWZ0ZXIzMDY=",
-                "R2l0aHViOiBodHRwczovL2dpdGh1Yi5jb20vRHJHaWZ0ZXI="
-            ];
-
-            setTimeout(() => {
-                _d.forEach(x => console.log(_b(x)));
-            }, delay);
-        })();
-    }
-
-    const hideModal = () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    };
-
-    if (closeModal) closeModal.addEventListener('click', hideModal);
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) hideModal();
-    });
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                scrollObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section, .section-title, .card, .about-segment, .milestone').forEach(el => {
-        scrollObserver.observe(el);
-    });
-
-    document.querySelectorAll('.read-more-btn').forEach(btn => {
-        let currentLines = 3;
-        btn.addEventListener('click', function () {
-            const segment = this.parentElement;
-            const textEl = segment.querySelector('p');
-
-            currentLines += 3;
-            textEl.style.display = '-webkit-box';
-            textEl.style.webkitLineClamp = currentLines;
-            textEl.style.lineClamp = currentLines;
-            textEl.style.webkitBoxOrient = 'vertical';
-
-            if (currentLines >= 20) {
-                this.style.display = 'none';
-            }
-        });
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    program();
-});
-</script></body>
-
+  </script>
+</body>
 </html>
