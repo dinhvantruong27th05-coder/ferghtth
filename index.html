@@ -1688,3 +1688,1154 @@
       font-size: 15px;
       color: rgba(255,255,255,0.82);
       max-width: 760px;
+ line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      margin-top: 70px;
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 25%),
+        linear-gradient(180deg, #0f172a 0%, #111827 100%);
+      color: rgba(255,255,255,0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 68%);
+      right: -140px;
+      top: -140px;
+      pointer-events: none;
+    }
+
+    .footer-top {
+      padding: 70px 0 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr 1.1fr;
+      gap: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand .logo {
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.70);
+      margin-bottom: 20px;
+      max-width: 360px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.14);
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 14px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.10);
+      flex: 0 0 42px;
+      font-weight: 900;
+    }
+
+    .footer-contact-item strong {
+      display: block;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 3px;
+      font-weight: 800;
+    }
+
+    .footer-contact-item span {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      padding: 22px 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-bottom p,
+    .footer-bottom a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.64);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      place-items: center;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.55);
+      z-index: 100;
+      padding: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .mobile-nav.active {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-panel {
+      width: min(100%, 380px);
+      height: 100%;
+      background: #fff;
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: var(--shadow-lg);
+      transform: translateX(-18px);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .mobile-nav.active .mobile-nav-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .mobile-close {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      cursor: pointer;
+    }
+
+    .mobile-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-links a {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--bg);
+      border: 1px solid rgba(226,232,240,0.88);
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .mobile-links a.active {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-color: rgba(37,99,235,0.18);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 34px rgba(37,99,235,0.28);
+      cursor: pointer;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .hidden-products {
+      display: none;
+    }
+
+    .show-all .hidden-products {
+      display: flex;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1280px) {
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .featured-products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        padding: 16px 0;
+      }
+
+      .header-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 320px;
+      }
+
+      .pricing-grid,
+      .featured-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar-inner,
+      .navbar-inner {
+        justify-content: center;
+      }
+
+      .nav-links,
+      .nav-right {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: grid;
+      }
+
+      .header-actions .login-btn {
+        display: none;
+      }
+
+      .hero-points,
+      .pricing-grid,
+      .featured-products,
+      .category-grid,
+      .plan-meta,
+      .product-actions,
+      .plan-actions,
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-card.card-a,
+      .floating-card.card-b,
+      .floating-card.card-c {
+        position: relative;
+        width: 100%;
+        transform: none;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin-bottom: 14px;
+      }
+
+      .hero-card-stack {
+        min-height: auto;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 20px, var(--container));
+      }
+
+      .hero-content,
+      .promo-card,
+      .trust-card,
+      .pricing-shell,
+      .benefit-card,
+      .faq-intro,
+      .faq-list-wrap,
+      .cta-box {
+        padding: 22px;
+      }
+
+      .title {
+        font-size: 30px;
+      }
+
+      .hero-title {
+        font-size: 36px;
+      }
+
+      .plan-price strong,
+      .promo-price strong {
+        font-size: 30px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-links">
+        <a href="#policy">Chính sách</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+      <div class="topbar-tools">
+        <select aria-label="Ngôn ngữ">
+          <option>Vietnamese</option>
+          <option>English</option>
+        </select>
+        <select aria-label="Tiền tệ">
+          <option>VND</option>
+          <option>USD</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">D</span>
+        <span class="logo-text">
+          DigitalMarket Pro
+          <small>Tài nguyên số chuẩn thương mại điện tử</small>
+        </span>
+      </a>
+
+      <div class="search-wrap">
+        <form class="search-box" id="searchForm">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm đúng 1 sản phẩm: ChatGPT Plus, Adobe Creative Cloud, Netflix Premium..."
+            autocomplete="off"
+          />
+          <button class="search-btn" type="submit" aria-label="Tìm kiếm">🔍</button>
+        </form>
+      </div>
+
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Giỏ hàng">
+          🛒
+          <span class="badge-dot"></span>
+        </button>
+        <button class="icon-btn" aria-label="Yêu thích">❤</button>
+        <button class="icon-btn" aria-label="Hỗ trợ">💬</button>
+        <button class="icon-btn login-btn" aria-label="Đăng nhập">👤 Đăng nhập</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="nav-links">
+        <a href="#" class="active">Trang chủ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#pricing">Bảng giá</a>
+        <a href="#promo">Khuyến mãi</a>
+        <a href="#guide">Hướng dẫn mua</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+      <div class="nav-right">
+        <span class="nav-chip">⚡ Giao tài khoản nhanh</span>
+        <span class="nav-chip">🛡️ Bảo hành rõ ràng</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-head">
+        <div class="logo">
+          <span class="logo-mark">D</span>
+          <span class="logo-text">
+            DigitalMarket Pro
+            <small>Mua nhanh - dùng ổn định</small>
+          </span>
+        </div>
+        <button class="mobile-close" id="mobileClose">✕</button>
+      </div>
+      <div class="mobile-links">
+        <a href="#" class="active">Trang chủ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#pricing">Bảng giá</a>
+        <a href="#promo">Khuyến mãi</a>
+        <a href="#guide">Hướng dẫn mua</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-main">
+            <div class="hero-content">
+              <div class="hero-badge">🔥 Nền tảng bán sản phẩm kỹ thuật số chuyên nghiệp</div>
+              <h1 class="hero-title">
+                Bảng giá tài khoản số <span>đẹp, rõ, dễ bán</span> như website thương mại điện tử thật
+              </h1>
+              <p class="hero-desc">
+                Thiết kế hiện đại, bố cục dày dặn, tập trung vào chuyển đổi. Hiển thị bảng giá nổi bật,
+                card sản phẩm chuyên nghiệp, tìm kiếm ra đúng duy nhất 1 sản phẩm theo từ khóa cần tìm.
+              </p>
+              <div class="hero-actions">
+                <a href="#pricing" class="btn btn-primary">Xem bảng giá trọng tâm</a>
+                <a href="#products" class="btn btn-ghost">Khám phá sản phẩm</a>
+              </div>
+              <div class="hero-points">
+                <div class="hero-point">
+                  <strong>1.500+</strong>
+                  <span>Khách hàng đã mua tài khoản số</span>
+                </div>
+                <div class="hero-point">
+                  <strong>24/7</strong>
+                  <span>Hỗ trợ kỹ thuật và xử lý lỗi</span>
+                </div>
+                <div class="hero-point">
+                  <strong>99%</strong>
+                  <span>Tỷ lệ giao tài khoản thành công</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="hero-card-stack">
+                <div class="floating-card card-a">
+                  <div class="mini-label">Phổ biến</div>
+                  <h4>Gói Tiêu Chuẩn bán chạy nhất</h4>
+                  <p>Phù hợp người dùng cá nhân, team nhỏ, cần giá tốt và thời hạn lâu hơn.</p>
+                  <div class="mini-tags">
+                    <span>3 tháng</span>
+                    <span>2 thiết bị</span>
+                    <span>BH 30 ngày</span>
+                  </div>
+                </div>
+
+                <div class="floating-card card-b">
+                  <div class="mini-label">Bán hàng</div>
+                  <h4>Tối ưu landing page theo kiểu ecommerce thật</h4>
+                  <p>Header, menu, hero, pricing, card sản phẩm, FAQ và footer đầy đủ.</p>
+                  <div class="mini-tags">
+                    <span>Responsive</span>
+                    <span>Hover đẹp</span>
+                    <span>Tìm kiếm 1 SP</span>
+                  </div>
+                </div>
+
+                <div class="floating-card card-c">
+                  <div class="mini-label">Ưu đãi</div>
+                  <h4>Giảm sâu tới 40%</h4>
+                  <p>Hiển thị giá gốc, giá sale, badge giảm giá rõ ràng và chuyên nghiệp.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side" id="promo">
+            <div class="promo-card">
+              <h3>Deal nổi bật hôm nay cho tài nguyên số bán chạy</h3>
+              <p>
+                Tổng hợp các gói hot: ChatGPT Plus, Adobe Creative Cloud, Netflix Premium, Canva Pro,
+                Figma Edu... trình bày như web bán hàng thật, dễ chốt đơn và dễ sửa nội dung.
+              </p>
+              <div class="promo-row">
+                <span class="promo-pill">Giao nhanh</span>
+                <span class="promo-pill">Tài khoản ổn định</span>
+                <span class="promo-pill">Hỗ trợ tận tình</span>
+              </div>
+              <div class="promo-price">
+                <strong>Chỉ từ 99.000đ</strong>
+                <del>159.000đ</del>
+              </div>
+            </div>
+
+            <div class="trust-card">
+              <h4>Lý do khách chọn mua tại đây</h4>
+              <div class="trust-list">
+                <div class="trust-item">
+                  <div class="trust-icon">✓</div>
+                  <div>
+                    <h5>Thông tin gói rõ ràng</h5>
+                    <p>Thời hạn, số thiết bị, loại tài khoản, bảo hành và quyền lợi hiển thị đầy đủ.</p>
+                  </div>
+                </div>
+                <div class="trust-item">
+                  <div class="trust-icon">⚡</div>
+                  <div>
+                    <h5>Giao tài khoản nhanh</h5>
+                    <p>Tự động hoặc thủ công tùy loại sản phẩm, có hướng dẫn sử dụng ngay khi mua.</p>
+                  </div>
+                </div>
+                <div class="trust-item">
+                  <div class="trust-icon">🛡</div>
+                  <div>
+                    <h5>Hậu mãi minh bạch</h5>
+                    <p>Hỗ trợ kỹ thuật và xử lý lỗi trong thời gian bảo hành theo từng gói cụ thể.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticker-wrap">
+          <div class="ticker">
+            <div class="ticker-item">
+              <div class="ticker-icon">🎁</div>
+              <div>
+                <strong>Nhiều ưu đãi theo gói</strong>
+                <span>Kết hợp tài khoản số để được giá tốt hơn</span>
+              </div>
+            </div>
+            <div class="ticker-item">
+              <div class="ticker-icon">🚀</div>
+              <div>
+                <strong>Website tối ưu bán hàng</strong>
+                <span>Bố cục dày dặn, rõ ràng, giống ecommerce thật</span>
+              </div>
+            </div>
+            <div class="ticker-item">
+              <div class="ticker-icon">🔍</div>
+              <div>
+                <strong>Tìm kiếm ra đúng 1 sản phẩm</strong>
+                <span>Nhập từ khóa sẽ lọc đúng duy nhất sản phẩm cần tìm</span>
+              </div>
+            </div>
+            <div class="ticker-item">
+              <div class="ticker-icon">📞</div>
+              <div>
+                <strong>Hỗ trợ 24/7</strong>
+                <span>Luôn có kênh hỗ trợ nhanh qua chat, mail, hotline</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Danh mục nổi bật</span>
+            <h2 class="title">Khối danh mục dạng icon/card bo góc, nhìn hiện đại và dễ chọn</h2>
+            <p class="desc">
+              Gom nhóm các loại sản phẩm kỹ thuật số phổ biến để người mua duyệt nhanh hơn và tăng tỷ lệ chuyển đổi.
+            </p>
+          </div>
+          <a href="#products" class="btn btn-secondary">Xem toàn bộ sản phẩm</a>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <div class="category-icon">🤖</div>
+            <div>
+              <h3>Tài khoản AI</h3>
+              <p>ChatGPT Plus, Claude, Gemini, Copilot, SuperGrok và nhiều dịch vụ AI khác.</p>
+            </div>
+            <div class="category-meta">
+              <span>18 sản phẩm</span>
+              <span>→</span>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon">🎬</div>
+            <div>
+              <h3>Giải trí</h3>
+              <p>Netflix Premium, Spotify, YouTube Premium, Disney+ và các nền tảng xem phim nghe nhạc.</p>
+            </div>
+            <div class="category-meta">
+              <span>24 sản phẩm</span>
+              <span>→</span>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon">🎨</div>
+            <div>
+              <h3>Thiết kế</h3>
+              <p>Adobe Creative Cloud, Canva Pro, Freepik Premium, Figma Edu, Envato Elements.</p>
+            </div>
+            <div class="category-meta">
+              <span>15 sản phẩm</span>
+              <span>→</span>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon">🛡️</div>
+            <div>
+              <h3>Bảo mật & VPN</h3>
+              <p>NordVPN, ExpressVPN, LastPass, 1Password, công cụ bảo vệ dữ liệu cá nhân.</p>
+            </div>
+            <div class="category-meta">
+              <span>12 sản phẩm</span>
+              <span>→</span>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon">💼</div>
+            <div>
+              <h3>Làm việc</h3>
+              <p>Microsoft 365, Notion AI, Zoom Pro, Google Workspace và tài nguyên phục vụ công việc.</p>
+            </div>
+            <div class="category-meta">
+              <span>17 sản phẩm</span>
+              <span>→</span>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-icon">📚</div>
+            <div>
+              <h3>Học tập</h3>
+              <p>Các gói học online, lưu trữ tài liệu, công cụ học tập và nghiên cứu tiện lợi.</p>
+            </div>
+            <div class="category-meta">
+              <span>10 sản phẩm</span>
+              <span>→</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Bảng giá trọng tâm</span>
+            <h2 class="title">Section bảng giá đẹp, cao cấp, rõ từng quyền lợi và dễ so sánh</h2>
+            <p class="desc">
+              Ba gói được trình bày theo phong cách bán hàng thật: nổi bật giá sale, hiển thị quyền lợi, đối tượng phù hợp,
+              hỗ trợ kỹ thuật, bảo hành, số thiết bị và bảng so sánh chi tiết bằng tick/check.
+            </p>
+          </div>
+        </div>
+
+        <div class="pricing-shell">
+          <div class="pricing-top">
+            <div class="pricing-badges">
+              <span>✔ Thiết kế cao cấp</span>
+              <span>✔ Hover mượt</span>
+              <span>✔ Tiêu Chuẩn là gói nổi bật nhất</span>
+              <span>✔ Có bảng so sánh chi tiết</span>
+            </div>
+            <a href="#products" class="btn btn-secondary">Xem sản phẩm bên dưới</a>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="plan-card">
+              <div class="plan-head">
+                <div class="plan-name">
+                  <h3>Cơ Bản</h3>
+                  <span class="discount-badge">-20%</span>
+                </div>
+                <div class="plan-price">
+                  <strong>99.000đ</strong>
+                  <small>/ 1 tháng</small>
+                </div>
+                <div class="plan-origin">
+                  <del>129.000đ</del>
+                  <span class="save-chip">Tiết kiệm 30.000đ</span>
+                </div>
+                <div class="plan-meta">
+                  <div class="meta-box">
+                    <span>Số thiết bị</span>
+                    <strong>1 thiết bị</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Bảo hành</span>
+                    <strong>7 ngày</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Loại tài khoản</span>
+                    <strong>Chia sẻ tối ưu chi phí</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Hỗ trợ</span>
+                    <strong>Tiêu chuẩn</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-body">
+                <div class="plan-block">
+                  <h4>Quyền lợi nổi bật</h4>
+                  <ul class="feature-list">
+                    <li><i>✓</i><span>Dùng ngay sau khi thanh toán, giao nhanh qua chat/email.</span></li>
+                    <li><i>✓</i><span>Phù hợp nhu cầu cơ bản, tối ưu chi phí cho người dùng mới.</span></li>
+                    <li><i>✓</i><span>Có hướng dẫn đăng nhập và sử dụng chi tiết.</span></li>
+                    <li><i>✓</i><span>Hỗ trợ lỗi đăng nhập trong thời gian bảo hành.</span></li>
+                    <li><i>✓</i><span>Giao diện quản lý đơn hàng rõ ràng, dễ theo dõi.</span></li>
+                  </ul>
+                </div>
+
+                <div class="support-box">
+                  <h4>Hỗ trợ kỹ thuật</h4>
+                  <p>Ưu tiên hỗ trợ trong giờ hành chính, xử lý lỗi cơ bản và các vấn đề đăng nhập phổ biến.</p>
+                </div>
+
+                <div class="fit-box">
+                  <h4>Đối tượng phù hợp</h4>
+                  <p>Sinh viên, người dùng cá nhân, khách muốn trải nghiệm thử trước khi nâng cấp lên gói cao hơn.</p>
+                </div>
+
+                <div class="plan-actions">
+                  <a href="#" class="btn btn-primary">Mua ngay</a>
+                  <a href="#" class="btn btn-secondary">Xem chi tiết</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="plan-card popular">
+              <div class="plan-ribbon">Phổ biến nhất</div>
+              <div class="plan-head">
+                <div class="plan-name">
+                  <h3>Tiêu Chuẩn</h3>
+                  <span class="discount-badge">-30%</span>
+                </div>
+                <div class="plan-price">
+                  <strong>199.000đ</strong>
+                  <small>/ 3 tháng</small>
+                </div>
+                <div class="plan-origin">
+                  <del>285.000đ</del>
+                  <span class="save-chip">Tiết kiệm 86.000đ</span>
+                </div>
+                <div class="plan-meta">
+                  <div class="meta-box">
+                    <span>Số thiết bị</span>
+                    <strong>2 thiết bị</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Bảo hành</span>
+                    <strong>30 ngày</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Loại tài khoản</span>
+                    <strong>Cá nhân / Team nhỏ</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Hỗ trợ</span>
+                    <strong>Ưu tiên nhanh</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-body">
+                <div class="plan-block">
+                  <h4>Quyền lợi nổi bật</h4>
+                  <ul class="feature-list">
+                    <li><i>✓</i><span>Giá tốt nhất theo hiệu năng sử dụng, thời hạn dài hơn hẳn gói cơ bản.</span></li>
+                    <li><i>✓</i><span>Dùng được trên 2 thiết bị, tiện cho cá nhân hoặc nhóm nhỏ.</span></li>
+                    <li><i>✓</i><span>Ưu tiên hỗ trợ khi gặp lỗi, xử lý nhanh hơn.</span></li>
+                    <li><i>✓</i><span>Có cập nhật hướng dẫn mới khi nền tảng thay đổi giao diện.</span></li>
+                    <li><i>✓</i><span>Phù hợp nhất để bán hàng vì card nổi bật và giá trị rõ ràng.</span></li>
+                  </ul>
+                </div>
+
+                <div class="support-box">
+                  <h4>Hỗ trợ kỹ thuật</h4>
+                  <p>Hỗ trợ ưu tiên qua chat, có kiểm tra lỗi nhanh, tư vấn nâng cấp và đổi phương án sử dụng khi cần.</p>
+                </div>
+
+                <div class="fit-box">
+                  <h4>Đối tượng phù hợp</h4>
+                  <p>Người dùng thường xuyên, freelancer, creator, dân văn phòng, team nhỏ cần dùng ổn định với chi phí hợp lý.</p>
+                </div>
+
+                <div class="plan-actions">
+                  <a href="#" class="btn btn-primary">Mua ngay</a>
+                  <a href="#" class="btn btn-secondary">Xem chi tiết</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="plan-card">
+              <div class="plan-head">
+                <div class="plan-name">
+                  <h3>Cao Cấp</h3>
+                  <span class="discount-badge">-35%</span>
+                </div>
+                <div class="plan-price">
+                  <strong>399.000đ</strong>
+                  <small>/ 12 tháng</small>
+                </div>
+                <div class="plan-origin">
+                  <del>615.000đ</del>
+                  <span class="save-chip">Tiết kiệm 216.000đ</span>
+                </div>
+                <div class="plan-meta">
+                  <div class="meta-box">
+                    <span>Số thiết bị</span>
+                    <strong>5 thiết bị</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Bảo hành</span>
+                    <strong>90 ngày</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Loại tài khoản</span>
+                    <strong>Ưu tiên ổn định lâu dài</strong>
+                  </div>
+                  <div class="meta-box">
+                    <span>Hỗ trợ</span>
+                    <strong>Cao cấp 1-1</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="plan-body">
+                <div class="plan-block">
+                  <h4>Quyền lợi nổi bật</h4>
+                  <ul class="feature-list">
+                    <li><i>✓</i><span>Thời hạn 12 tháng tối ưu cho khách dùng lâu dài và ít phải gia hạn.</span></li>
+                    <li><i>✓</i><span>Dùng tới 5 thiết bị, phù hợp nhóm làm việc hoặc gia đình.</span></li>
+                    <li><i>✓</i><span>Bảo hành dài, hỗ trợ kỹ thuật sát sao hơn các gói còn lại.</span></li>
+                    <li><i>✓</i><span>Ưu tiên cập nhật, tư vấn sử dụng hiệu quả và xử lý sự cố chuyên sâu.</span></li>
+                    <li><i>✓</i><span>Thích hợp làm gói premium để tăng giá trị giỏ hàng.</span></li>
+                  </ul>
+                </div>
+
+                <div class="support-box">
+                  <h4>Hỗ trợ kỹ thuật</h4>
+                  <p>Hỗ trợ chuyên sâu, theo dõi lỗi, hướng dẫn sử dụng nâng cao và phản hồi ưu tiên cho khách premium.</p>
+                </div>
+
+                <div class="fit-box">
+                  <h4>Đối tượng phù hợp</h4>
+                  <p>Doanh nghiệp nhỏ, agency, người dùng chuyên nghiệp hoặc khách cần gói ổn định, lâu dài, nhiều thiết bị.</p>
+                </div>
+
+                <div class="plan-actions">
+                  <a href="#" class="btn btn-primary">Mua ngay</a>
+                  <a href="#" class="btn btn-secondary">Xem chi tiết</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="compare-wrap">
+            <div class="compare-head">
+              <div>
+                <h3>Bảng so sánh tính năng chi tiết</h3>
+                <p>So sánh nhanh để khách chọn đúng gói theo nhu cầu và ngân sách.</p>
+              </div>
+            </div>
+
+            <div class="compare-table-wrap">
+              <table class="compare-table">
+                <thead>
+                  <tr>
+                    <th>Tính năng</th>
+                    <th>Cơ Bản</th>
+                    <th class="highlight-col">Tiêu Chuẩn</th>
+                    <th>Cao Cấp</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Thời hạn sử dụng</td>
+                    <td>1 tháng</td>
+                    <td class="highlight-col">3 tháng</td>
+                    <td>12 tháng</td>
+                  </tr>
+                  <tr>
+                    <td>Số thiết bị</td>
+                    <td>1</td>
+                    <td class="highlight-col">2</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Loại tài khoản</td>
+                    <td>Tiết kiệm</td>
+                    <td class="highlight-col">Cân bằng tốt nhất</td>
+                    <td>Premium</td>
+                  </tr>
+                  <tr>
+                    <td>Bảo hành</td>
+                    <td>7 ngày</td>
+                    <td class="highlight-col">30 ngày</td>
+                    <td>90 ngày</td>
+                  </tr>
+                  <tr>
+                    <td>Hỗ trợ kỹ thuật ưu tiên</td>
+                    <td><span class="cross">—</span></td>
+                    <td class="highlight-col"><span class="tick">✓</span></td>
+                    <td><span class="tick">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Hướng dẫn sử dụng chi tiết</td>
+                    <td><span class="tick">✓</span></td>
+                    <td class="highlight-col"><span class="tick">✓</span></td>
+                    <td><span class="tick">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Hỗ trợ nhiều thiết bị</td>
+                    <td><span class="cross">—</span></td>
+                    <td class="highlight-col"><span class="tick">✓</span></td>
+                    <td><span class="tick">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Tư vấn nâng cao</td>
+                    <td><span class="cross">—</span></td>
+                    <td class="highlight-col"><span class="tick">✓</span></td>
+                    <td><span class="tick">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Phù hợp team / doanh nghiệp nhỏ</td>
+                    <td><span class="cross">—</span></td>
+                    <td class="highlight-col"><span class="tick">✓</span></td>
+                    <td><span class="tick">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Ưu tiên phản hồi 1-1</td>
+                    <td><span class="cross">—</span></td>
+                    <td class="highlight-col"><span class="cross">—</span></td>
+                    <td><span class="tick">✓</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">Sản phẩm nổi bật</span>
+            <h2 class="title">Danh sách card sản phẩm chuyên nghiệp, dày dặn và tối ưu bán hàng</h2>
+            <p class="desc">
+              Mỗi sản phẩm có ảnh mô phỏng, giá, nhãn trạng thái, mô tả ngắn, nút mua và nút chi tiết như một web bán hàng thật.
+            </p>
+          </div>
+          <button class="btn btn-secondary" id="toggleProductsBtn">Xem thêm sản phẩm</button>
+        </div>
+
+        <div class="search-result-box" id="searchResultBox">
+          <p class="search-note" id="searchNote"></p>
+          <div id="searchResultContainer"></div>
+        </div>
+
+        <div class="featured-products" id="productGrid">
+          <article class="product-card product-item" data-keywords="chatgpt plus ai openai tài khoản chatgpt">
+            <div class="product-media">
+              <span class="sale-tag">Sale 71%</span>
+              <div class="media-box">ChatGPT<br />Plus</div>
+            </div>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="product-label">AI cao cấp</span>
+                <span class="product-status">Giao ngay</span>
+              </div>
+              <h3>ChatGPT Plus</h3>
+              <p>Dành cho người dùng AI thường xuyên, phản hồi nhanh hơn, ưu tiên tính năng mới và trải nghiệm ổn định.</p>
+              <div class="product-price-row">
+                <strong>50.000đ</strong>
+                <del>560.000đ</del>
+              </div>
+              <div class="product-meta">
+                <span>Đã bán 43</span>
+                <span>Hỗ trợ 24/7</span>
+              </div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Mua ngay</a>
+                <a href="#" class="btn btn-secondary">Chi tiết</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-item" data-keywords="adobe creative cloud adobe cc photoshop premiere illustrator">
+            <div class="product-media alt-2">
+              <span class="sale-tag">Giảm 89%</span>
+              <div class="media-box">Adobe Creative<br />Cloud</div>
+            </div>
+            <div class="product-body">
+              <div class="product-top">
+                <span class="product-label">Thiết kế</span>
+                <span class="product-status">Còn hàng</span>
+              </div>
+              <h3>Adobe Creative Cloud All Apps</h3>
+              <p>Trọn bộ ứng dụng thiết kế, chỉnh ảnh, dựng video, sáng tạo nội dung dành cho creator và designer.</p>
+              <div class="product-price-row">
+                <strong>375.000đ</strong>
+                <del>1.650.000đ</del>
+              </div>
+              <div class="product-meta">
+                <span>Đã bán 6</span>
+                <span>Full app</span>
+              </div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Mua ngay</a>
+                <a href="#" class="btn btn-secondary">Chi tiết</a>
+              </div>
+            </div>
+          </article>
