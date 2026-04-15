@@ -3,3524 +3,906 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigitalMarket Pro - Bảng giá sản phẩm kỹ thuật số</title>
-  <meta name="description" content="Website bảng giá sản phẩm kỹ thuật số hiện đại, chuẩn thương mại điện tử, responsive đẹp trên mọi thiết bị." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <title>PremiumHub - Bảng Giá Tài Khoản Premium</title>
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-soft: #dbeafe;
-      --secondary: #0f172a;
-      --accent: #f97316;
-      --accent-soft: #ffedd5;
-      --success: #16a34a;
-      --danger: #dc2626;
-      --warning: #f59e0b;
-      --muted: #64748b;
-      --muted-2: #94a3b8;
-      --line: #e2e8f0;
-      --bg: #f8fafc;
-      --bg-soft: #f1f5f9;
-      --white: #ffffff;
-      --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.06);
-      --shadow-md: 0 16px 40px rgba(15, 23, 42, 0.10);
-      --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.14);
-      --radius-sm: 10px;
-      --radius: 18px;
-      --radius-lg: 24px;
-      --radius-xl: 32px;
-      --container: 1320px;
-      --transition: all 0.28s ease;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Inter", sans-serif;
-      background: linear-gradient(180deg, #f8fbff 0%, #f8fafc 30%, #ffffff 100%);
-      color: var(--secondary);
-      line-height: 1.5;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
-      outline: none;
-      border: none;
-      background: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--container));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 68px 0;
-      position: relative;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-      color: var(--primary);
-      background: var(--primary-soft);
-      padding: 8px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-
-    .title {
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.15;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--secondary);
-      max-width: 760px;
-    }
-
-    .desc {
-      font-size: 15px;
-      color: var(--muted);
-      max-width: 700px;
-      margin-top: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
-      color: var(--white);
-      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.28);
-    }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--secondary);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(37, 99, 235, 0.35);
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .btn-ghost {
-      background: rgba(255,255,255,0.15);
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.24);
-      backdrop-filter: blur(10px);
-    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
 
     .topbar {
-      background: linear-gradient(90deg, #1e3a8a 0%, #0f766e 100%);
-      color: rgba(255,255,255,0.92);
-      font-size: 13px;
-      position: relative;
-      z-index: 50;
-    }
-
-    .topbar-inner {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 10px 24px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      min-height: 44px;
+      gap: 16px;
       flex-wrap: wrap;
-      padding: 8px 0;
+      font-size: 14px;
     }
-
-    .topbar-links,
-    .topbar-tools {
+    .topbar .group {
       display: flex;
-      align-items: center;
-      gap: 18px;
+      gap: 16px;
       flex-wrap: wrap;
-    }
-
-    .topbar a {
-      opacity: 0.92;
-      transition: var(--transition);
-    }
-
-    .topbar a:hover {
-      opacity: 1;
-      color: #fff;
-    }
-
-    .topbar select {
-      color: #fff;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 8px 12px;
-      border-radius: 999px;
-      cursor: pointer;
+      align-items: center;
     }
 
     .header {
       position: sticky;
       top: 0;
-      z-index: 40;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226,232,240,0.9);
-    }
-
-    .header-inner {
-      display: grid;
-      grid-template-columns: 240px minmax(280px, 1fr) auto;
-      gap: 20px;
-      align-items: center;
-      min-height: 92px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      font-size: 22px;
-      color: var(--secondary);
-    }
-
-    .logo-mark {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
-      display: grid;
-      place-items: center;
-      color: var(--white);
-      font-size: 24px;
-      box-shadow: 0 14px 28px rgba(37,99,235,0.28);
-    }
-
-    .logo-text small {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    .search-wrap {
-      position: relative;
-    }
-
-    .search-box {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--white);
-      border: 2px solid rgba(37,99,235,0.16);
-      border-radius: 18px;
-      box-shadow: var(--shadow-sm);
-      padding: 10px 12px 10px 18px;
-      transition: var(--transition);
-    }
-
-    .search-box:focus-within {
-      border-color: rgba(37,99,235,0.48);
-      box-shadow: 0 0 0 6px rgba(37,99,235,0.10);
-    }
-
-    .search-box input {
-      flex: 1;
-      min-width: 0;
-      font-size: 15px;
-      color: var(--secondary);
-    }
-
-    .search-box input::placeholder {
-      color: var(--muted-2);
-    }
-
-    .search-btn {
-      min-width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
-      color: var(--white);
-      cursor: pointer;
-      font-size: 18px;
-      display: grid;
-      place-items: center;
-      transition: var(--transition);
-    }
-
-    .search-btn:hover {
-      transform: scale(1.03);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .icon-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      color: var(--secondary);
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .icon-btn:hover {
-      transform: translateY(-2px);
-      color: var(--primary);
-      border-color: rgba(37,99,235,0.30);
-    }
-
-    .badge-dot {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--danger);
-      border: 2px solid var(--white);
-    }
-
-    .login-btn {
-      padding: 0 18px;
-      width: auto;
-      gap: 10px;
-      font-weight: 700;
-    }
-
-    .navbar {
-      background: var(--white);
-      border-bottom: 1px solid rgba(226,232,240,0.85);
-      position: relative;
-      z-index: 35;
-    }
-
-    .navbar-inner {
+      z-index: 50;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      min-height: 62px;
+      gap: 18px;
       flex-wrap: wrap;
     }
-
-    .nav-links {
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #dc2626;
+      letter-spacing: 0.3px;
+    }
+    .logo span { color: #2563eb; }
+    .search {
+      flex: 1;
+      max-width: 720px;
+      min-width: 260px;
       display: flex;
-      align-items: center;
+      gap: 10px;
+    }
+    .search input {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 13px 16px;
+      font-size: 15px;
+      background: #fff;
+      outline: none;
+    }
+    .btn,
+    .search button {
+      border: none;
+      border-radius: 14px;
+      padding: 13px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .btn-primary,
+    .search button {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+    }
+    .btn-dark {
+      background: #0f172a;
+      color: #fff;
+    }
+    .btn-soft {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+    .btn:hover,
+    .search button:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+    .header-actions {
+      display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
+    .pill {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
 
-    .nav-links a {
-      padding: 11px 16px;
+    .nav {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0 24px 16px;
+    }
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav a {
+      display: inline-block;
+      padding: 10px 14px;
       border-radius: 12px;
       font-weight: 700;
       color: #334155;
-      transition: var(--transition);
     }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: var(--primary-soft);
-      color: var(--primary);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-      flex-wrap: wrap;
-    }
-
-    .nav-chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--bg-soft);
-      color: var(--secondary);
+    .nav a:hover,
+    .nav a.active {
+      background: #2563eb;
+      color: white;
     }
 
     .hero {
-      padding: 26px 0 24px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .hero-main {
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.26), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(129,140,248,0.22), transparent 30%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #111827 100%);
-      color: var(--white);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      position: relative;
-      box-shadow: var(--shadow-lg);
-      min-height: 520px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .hero-content {
-      padding: 42px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.15);
-      width: fit-content;
-      margin-bottom: 18px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-title {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.02;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      margin-bottom: 18px;
-      max-width: 620px;
-    }
-
-    .hero-title span {
-      color: #93c5fd;
-    }
-
-    .hero-desc {
-      max-width: 580px;
-      color: rgba(255,255,255,0.82);
-      font-size: 16px;
-      margin-bottom: 26px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      max-width: 720px;
-    }
-
-    .hero-point {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 18px;
-      padding: 16px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-point strong {
-      display: block;
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .hero-point span {
-      font-size: 13px;
-      color: rgba(255,255,255,0.70);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .hero-card-stack {
-      width: 100%;
-      max-width: 420px;
-      position: relative;
-      min-height: 360px;
-    }
-
-    .floating-card {
-      position: absolute;
-      background: rgba(255,255,255,0.95);
-      border-radius: 22px;
-      box-shadow: 0 22px 50px rgba(15,23,42,0.25);
-      color: var(--secondary);
-      backdrop-filter: blur(8px);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.72);
-    }
-
-    .floating-card.card-a {
-      width: 250px;
-      padding: 20px;
-      top: 10px;
-      right: 40px;
-      transform: rotate(7deg);
-    }
-
-    .floating-card.card-b {
-      width: 290px;
-      padding: 22px;
-      left: 10px;
-      bottom: 56px;
-      transform: rotate(-8deg);
-    }
-
-    .floating-card.card-c {
-      width: 220px;
-      padding: 18px;
-      bottom: 0;
-      right: 8px;
-      transform: rotate(4deg);
-    }
-
-    .floating-card .mini-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      color: var(--primary);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .floating-card h4 {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .floating-card p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .mini-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .mini-tags span {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: var(--bg-soft);
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--secondary);
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 24px;
-      align-content: start;
-    }
-
-    .promo-card,
-    .trust-card {
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.85);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-    }
-
-    .promo-card {
-      padding: 28px;
-      position: relative;
-      min-height: 248px;
-      background:
-        radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 25%),
-        linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-    }
-
-    .promo-card h3 {
-      font-size: 28px;
-      line-height: 1.15;
-      font-weight: 900;
-      margin-bottom: 14px;
-      max-width: 380px;
-    }
-
-    .promo-card p {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 430px;
-      margin-bottom: 20px;
-    }
-
-    .promo-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .promo-pill {
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 13px;
-      font-weight: 700;
-      padding: 9px 12px;
-      border-radius: 999px;
-    }
-
-    .promo-price {
-      display: flex;
-      align-items: flex-end;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .promo-price strong {
-      font-size: 34px;
-      line-height: 1;
-      color: var(--danger);
-      font-weight: 900;
-    }
-
-    .promo-price del {
-      color: var(--muted-2);
-      font-weight: 700;
-    }
-
-    .trust-card {
-      padding: 22px;
-    }
-
-    .trust-card h4 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-
-    .trust-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 14px;
-      border-radius: 18px;
-      background: var(--bg);
-      border: 1px solid rgba(226,232,240,0.85);
-    }
-
-    .trust-icon {
-      flex: 0 0 46px;
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
-      color: var(--primary);
-      font-size: 22px;
-      font-weight: 900;
-    }
-
-    .trust-item h5 {
-      font-size: 15px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .trust-item p {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .ticker-wrap {
-      margin-top: 24px;
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.85);
-      box-shadow: var(--shadow-sm);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .ticker {
-      display: flex;
-      gap: 16px;
-      padding: 14px;
-      flex-wrap: wrap;
-    }
-
-    .ticker-item {
-      flex: 1 1 220px;
-      min-width: 220px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-      border: 1px solid rgba(226,232,240,0.85);
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .ticker-item .ticker-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .ticker-item strong {
-      display: block;
-      font-size: 15px;
-      font-weight: 800;
-    }
-
-    .ticker-item span {
-      display: block;
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .category-card {
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.85);
-      border-radius: 24px;
-      box-shadow: var(--shadow-sm);
-      padding: 22px 18px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-      min-height: 170px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-
-    .category-card::before {
-      content: "";
-      position: absolute;
-      inset: auto -20px -20px auto;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .category-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(37,99,235,0.28);
-    }
-
-    .category-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
-      display: grid;
-      place-items: center;
-      font-size: 28px;
-    }
-
-    .category-card h3 {
-      font-size: 17px;
-      font-weight: 800;
-      margin: 18px 0 6px;
-    }
-
-    .category-card p {
-      font-size: 13px;
-      color: var(--muted);
-      min-height: 38px;
-    }
-
-    .category-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 14px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .pricing-shell {
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.12), transparent 25%),
-        radial-gradient(circle at bottom right, rgba(129,140,248,0.12), transparent 30%),
-        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      border: 1px solid rgba(226,232,240,0.85);
-      border-radius: 32px;
-      padding: 30px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .pricing-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-
-    .pricing-badges {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .pricing-badges span {
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      border: 1px solid rgba(226,232,240,0.85);
-      background: var(--white);
-      color: var(--secondary);
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .plan-card {
-      position: relative;
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.92);
+      margin: 24px;
       border-radius: 28px;
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
+      background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #06b6d4 100%);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 24px;
+      padding: 36px;
+      box-shadow: 0 25px 70px rgba(37, 99, 235, 0.22);
+    }
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 42px;
+      line-height: 1.18;
+    }
+    .hero p {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .hero-buttons {
       display: flex;
-      flex-direction: column;
-      min-height: 100%;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-
-    .plan-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(37,99,235,0.26);
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      align-self: stretch;
     }
+    .hero-card h3 { margin-top: 0; font-size: 22px; }
 
-    .plan-card.popular {
-      border: 2px solid rgba(37,99,235,0.24);
-      transform: scale(1.02);
-      box-shadow: 0 24px 60px rgba(37,99,235,0.15);
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    }
-
-    .plan-card.popular:hover {
-      transform: scale(1.02) translateY(-8px);
-    }
-
-    .plan-ribbon {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
-      color: var(--white);
-      padding: 9px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      box-shadow: 0 12px 24px rgba(249,115,22,0.24);
-      z-index: 3;
-    }
-
-    .plan-head {
-      padding: 28px 28px 18px;
-      border-bottom: 1px solid rgba(226,232,240,0.75);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .plan-head::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -70px;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59,130,246,0.13) 0%, transparent 68%);
-    }
-
-    .plan-name {
+    .container { padding: 0 24px 36px; }
+    .section-title {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
+      gap: 16px;
+      margin: 30px 0 18px;
     }
-
-    .plan-name h3 {
+    .section-title h2 {
+      margin: 0;
       font-size: 28px;
-      line-height: 1.1;
-      font-weight: 900;
+    }
+    .muted { color: #64748b; }
+
+    .grid { display: grid; gap: 18px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+    }
+    .category-card,
+    .account-card,
+    .combo-card,
+    .benefit-card,
+    .review-card,
+    .faq-item {
+      transition: 0.22s ease;
+    }
+    .category-card:hover,
+    .account-card:hover,
+    .combo-card:hover,
+    .benefit-card:hover,
+    .review-card:hover,
+    .faq-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
     }
 
-    .discount-badge {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #fee2e2;
-      color: var(--danger);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .plan-price {
-      display: flex;
-      align-items: flex-end;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .plan-price strong {
-      font-size: 42px;
-      line-height: 1;
-      color: var(--danger);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    .plan-price small {
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 700;
-      padding-bottom: 4px;
-    }
-
-    .plan-origin {
+    .icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 18px;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
     }
 
-    .plan-origin del {
-      font-weight: 700;
-      color: var(--muted-2);
-    }
-
-    .save-chip {
-      background: #dcfce7;
-      color: var(--success);
-      padding: 8px 12px;
+    .badge {
+      display: inline-block;
+      padding: 7px 11px;
       border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
       font-size: 12px;
-      font-weight: 800;
-    }
-
-    .plan-meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .meta-box {
-      background: var(--bg);
-      border: 1px solid rgba(226,232,240,0.9);
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .meta-box span {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 6px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .meta-box strong {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--secondary);
-      line-height: 1.35;
-    }
-
-    .plan-body {
-      padding: 24px 28px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      flex: 1;
-    }
-
-    .plan-block h4 {
-      font-size: 15px;
       font-weight: 800;
       margin-bottom: 12px;
-      color: var(--secondary);
+    }
+    .badge-hot {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .badge-new {
+      background: #dcfce7;
+      color: #166534;
     }
 
-    .feature-list {
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 12px 0;
+      color: #0f172a;
+    }
+    .price small {
+      font-size: 14px;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .old-price {
+      color: #94a3b8;
+      text-decoration: line-through;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
-
-    .feature-list li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+    .features li {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 11px 13px;
       font-size: 14px;
       color: #334155;
     }
 
-    .feature-list li i {
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #dcfce7;
-      color: var(--success);
-      font-style: normal;
-      font-size: 13px;
-      font-weight: 900;
-      margin-top: 1px;
-    }
-
-    .fit-box,
-    .support-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-      border: 1px solid rgba(226,232,240,0.9);
-      border-radius: 20px;
-      padding: 16px;
-    }
-
-    .fit-box p,
-    .support-box p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .plan-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: auto;
-    }
-
-    .compare-wrap {
-      margin-top: 26px;
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.85);
-      border-radius: 28px;
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-    }
-
-    .compare-head {
-      padding: 22px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid rgba(226,232,240,0.8);
-      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-    }
-
-    .compare-head h3 {
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .compare-head p {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 660px;
-    }
-
-    .compare-table-wrap {
-      overflow-x: auto;
-    }
-
-    .compare-table {
-      width: 100%;
-      min-width: 840px;
-      border-collapse: collapse;
-    }
-
-    .compare-table th,
-    .compare-table td {
-      padding: 16px 18px;
-      text-align: center;
-      border-bottom: 1px solid rgba(226,232,240,0.72);
-      font-size: 14px;
-    }
-
-    .compare-table thead th {
-      background: #f8fbff;
-      font-weight: 900;
-      color: var(--secondary);
-    }
-
-    .compare-table thead th:first-child,
-    .compare-table tbody td:first-child {
-      text-align: left;
-      font-weight: 800;
-      color: var(--secondary);
-      position: sticky;
-      left: 0;
-      background: var(--white);
-      z-index: 2;
-    }
-
-    .compare-table thead th:first-child {
-      background: #f8fbff;
-      z-index: 3;
-    }
-
-    .tick {
-      color: var(--success);
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .cross {
-      color: var(--muted-2);
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .highlight-col {
-      background: rgba(219,234,254,0.26);
-    }
-
-    .featured-products {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .product-card {
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.9);
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(37,99,235,0.24);
-    }
-
-    .product-media {
-      padding: 22px;
-      min-height: 210px;
-      background:
-        radial-gradient(circle at top left, rgba(37,99,235,0.12), transparent 26%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    .account-card.highlight {
+      border: 2px solid #2563eb;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
     }
-
-    .product-media.alt-2 {
-      background: linear-gradient(135deg, #111827 0%, #18181b 100%);
-    }
-
-    .product-media.alt-3 {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    }
-
-    .product-media.alt-4 {
-      background: linear-gradient(135deg, #134e4a 0%, #0f766e 100%);
-    }
-
-    .product-media .sale-tag {
+    .account-card.highlight::after {
+      content: 'Bán chạy';
       position: absolute;
       top: 16px;
-      left: 16px;
-      padding: 8px 12px;
-      border-radius: 999px;
+      right: 16px;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: white;
       font-size: 12px;
       font-weight: 800;
-      background: #ef4444;
-      color: var(--white);
-      box-shadow: 0 12px 24px rgba(239,68,68,0.24);
-    }
-
-    .media-box {
-      width: 100%;
-      max-width: 240px;
-      min-height: 138px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      display: grid;
-      place-items: center;
-      color: var(--white);
-      font-size: 34px;
-      font-weight: 900;
-      padding: 20px;
-      text-align: center;
-      line-height: 1.2;
-    }
-
-    .product-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      flex: 1;
-    }
-
-    .product-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 12px;
-      flex-wrap: wrap;
-    }
-
-    .product-label,
-    .product-status {
-      padding: 8px 10px;
+      padding: 7px 11px;
       border-radius: 999px;
-      font-weight: 800;
     }
 
-    .product-label {
-      background: #eef2ff;
-      color: #4f46e5;
-    }
-
-    .product-status {
-      background: #dcfce7;
-      color: var(--success);
-    }
-
-    .product-card h3 {
-      font-size: 20px;
-      line-height: 1.3;
-      font-weight: 800;
-      min-height: 52px;
-    }
-
-    .product-card p {
-      font-size: 14px;
-      color: var(--muted);
-      min-height: 65px;
-    }
-
-    .product-price-row {
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .product-price-row strong {
-      font-size: 28px;
-      line-height: 1;
-      font-weight: 900;
-      color: var(--danger);
-    }
-
-    .product-price-row del {
-      color: var(--muted-2);
-      font-weight: 700;
-    }
-
-    .product-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 13px;
-      color: var(--muted);
-      flex-wrap: wrap;
-    }
-
-    .product-actions {
+    .category-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: auto;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    .search-result-box {
-      margin-top: 26px;
-      display: none;
-    }
-
-    .search-result-box.active {
-      display: block;
-      animation: fadeUp 0.4s ease;
-    }
-
-    .search-note {
-      margin-bottom: 16px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .search-empty {
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.9);
-      border-radius: 24px;
-      box-shadow: var(--shadow-sm);
-      padding: 28px;
-      text-align: center;
-    }
-
-    .search-empty strong {
-      display: block;
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .search-empty p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .benefit-card {
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.9);
-      border-radius: 28px;
-      box-shadow: var(--shadow-sm);
-      padding: 28px;
-      transition: var(--transition);
-      min-height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .benefit-card::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(59,130,246,0.14) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .benefit-icon {
-      width: 64px;
-      height: 64px;
+    .compare-box {
+      overflow-x: auto;
       border-radius: 20px;
-      display: grid;
-      place-items: center;
-      font-size: 30px;
-      margin-bottom: 18px;
-      background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%);
+      border: 1px solid #e2e8f0;
+      background: white;
     }
-
-    .benefit-card h3 {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 12px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
     }
-
-    .benefit-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .mini-stats {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .mini-stat {
-      background: var(--bg);
-      border: 1px solid rgba(226,232,240,0.88);
-      border-radius: 18px;
+    th, td {
       padding: 16px;
-      text-align: center;
-    }
-
-    .mini-stat strong {
-      display: block;
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--secondary);
-      margin-bottom: 6px;
-    }
-
-    .mini-stat span {
-      display: block;
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .faq-intro,
-    .faq-list-wrap {
-      background: var(--white);
-      border: 1px solid rgba(226,232,240,0.9);
-      border-radius: 28px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .faq-intro {
-      padding: 30px;
-      position: sticky;
-      top: 160px;
-    }
-
-    .faq-intro h3 {
-      font-size: 28px;
-      line-height: 1.2;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .faq-intro p {
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
       font-size: 14px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 22px;
     }
-
-    .faq-contact {
-      display: grid;
-      gap: 14px;
-    }
-
-    .faq-contact-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 16px;
-      border-radius: 18px;
-      background: var(--bg);
-      border: 1px solid rgba(226,232,240,0.88);
-    }
-
-    .faq-contact-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 22px;
-      font-weight: 900;
-      flex: 0 0 46px;
-    }
-
-    .faq-contact-item h4 {
-      font-size: 15px;
+    th {
+      background: #eff6ff;
+      color: #1e3a8a;
       font-weight: 800;
-      margin-bottom: 4px;
     }
 
-    .faq-contact-item p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.6;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
     }
-
-    .faq-list-wrap {
-      padding: 18px;
-    }
-
-    .faq-item {
-      border: 1px solid rgba(226,232,240,0.88);
+    .stat-box {
+      background: white;
+      border: 1px solid #e2e8f0;
       border-radius: 22px;
-      overflow: hidden;
-      margin-bottom: 14px;
-      background: #fff;
-      transition: var(--transition);
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.05);
+    }
+    .stat-box h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #475569;
+    }
+    .stat-box .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
     }
 
-    .faq-item:last-child {
+    .review-card p,
+    .benefit-card p,
+    .category-card p,
+    .combo-card p,
+    .faq-item p {
+      line-height: 1.7;
       margin-bottom: 0;
     }
 
-    .faq-item.active {
-      border-color: rgba(37,99,235,0.26);
-      box-shadow: 0 12px 30px rgba(37,99,235,0.08);
-    }
-
-    .faq-question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      text-align: left;
-      padding: 20px 22px;
-      cursor: pointer;
-    }
-
-    .faq-question strong {
-      font-size: 16px;
-      line-height: 1.5;
-      font-weight: 800;
-      color: var(--secondary);
-    }
-
-    .faq-question span {
-      flex: 0 0 36px;
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
+    .faq-list {
       display: grid;
-      place-items: center;
-      background: var(--bg);
-      color: var(--secondary);
-      font-size: 22px;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-
-    .faq-item.active .faq-question span {
-      background: var(--primary);
-      color: var(--white);
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-
-    .faq-answer p {
-      padding: 0 22px 22px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .cta-section {
-      padding-top: 10px;
-    }
-
-    .cta-box {
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.24), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(129,140,248,0.20), transparent 28%),
-        linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
-      border-radius: 36px;
-      padding: 38px;
-      color: var(--white);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .cta-box::before {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      right: -80px;
-      top: -80px;
-      background: radial-gradient(circle, rgba(255,255,255,0.14) 0%, transparent 70%);
-    }
-
-    .cta-content h3 {
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.1;
-      font-weight: 900;
-      margin-bottom: 14px;
-      max-width: 760px;
-    }
-
-    .cta-content p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.82);
-      max-width: 760px;
- line-height: 1.8;
-      margin-bottom: 22px;
-    }
-
-    .cta-actions {
-      display: flex;
-      align-items: center;
       gap: 14px;
+    }
+
+    .cta {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: white;
+      border-radius: 28px;
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
       flex-wrap: wrap;
+    }
+    .cta h2 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.7;
     }
 
     .footer {
-      margin-top: 70px;
-      background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 25%),
-        linear-gradient(180deg, #0f172a 0%, #111827 100%);
-      color: rgba(255,255,255,0.85);
-      position: relative;
-      overflow: hidden;
+      background: #020617;
+      color: #cbd5e1;
+      margin-top: 36px;
+      padding: 40px 24px;
     }
-
-    .footer::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 68%);
-      right: -140px;
-      top: -140px;
-      pointer-events: none;
-    }
-
-    .footer-top {
-      padding: 70px 0 40px;
+    .footer-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.9fr 0.9fr 1.1fr;
-      gap: 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      position: relative;
-      z-index: 2;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
     }
-
-    .footer-brand .logo {
-      color: var(--white);
-      margin-bottom: 18px;
-    }
-
-    .footer-brand p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.70);
-      margin-bottom: 20px;
-      max-width: 360px;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-social a {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.10);
-      transition: var(--transition);
-    }
-
-    .footer-social a:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.14);
-    }
-
-    .footer-col h4 {
-      font-size: 18px;
-      font-weight: 800;
+    .footer h4 {
       color: #fff;
-      margin-bottom: 18px;
+      margin-top: 0;
+      margin-bottom: 14px;
     }
+    .footer p { line-height: 1.8; margin: 6px 0; }
 
-    .footer-links {
-      display: grid;
-      gap: 12px;
+    @media (max-width: 1200px) {
+      .category-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .grid-4, .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-
-    .footer-links a {
-      font-size: 14px;
-      color: rgba(255,255,255,0.72);
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-      transform: translateX(4px);
-    }
-
-    .footer-contact {
-      display: grid;
-      gap: 14px;
-    }
-
-    .footer-contact-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .footer-contact-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,0.10);
-      flex: 0 0 42px;
-      font-weight: 900;
-    }
-
-    .footer-contact-item strong {
-      display: block;
-      font-size: 14px;
-      color: #fff;
-      margin-bottom: 3px;
-      font-weight: 800;
-    }
-
-    .footer-contact-item span {
-      display: block;
-      font-size: 13px;
-      color: rgba(255,255,255,0.70);
-      line-height: 1.6;
-    }
-
-    .footer-bottom {
-      padding: 22px 0 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-bottom p,
-    .footer-bottom a {
-      font-size: 13px;
-      color: rgba(255,255,255,0.64);
-    }
-
-    .footer-bottom-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      place-items: center;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(15,23,42,0.55);
-      z-index: 100;
-      padding: 18px;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-
-    .mobile-nav.active {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .mobile-nav-panel {
-      width: min(100%, 380px);
-      height: 100%;
-      background: #fff;
-      border-radius: 28px;
-      padding: 22px;
-      box-shadow: var(--shadow-lg);
-      transform: translateX(-18px);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .mobile-nav.active .mobile-nav-panel {
-      transform: translateX(0);
-    }
-
-    .mobile-nav-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .mobile-close {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: var(--bg);
-      cursor: pointer;
-    }
-
-    .mobile-links {
-      display: grid;
-      gap: 10px;
-    }
-
-    .mobile-links a {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: var(--bg);
-      border: 1px solid rgba(226,232,240,0.88);
-      font-weight: 700;
-      color: var(--secondary);
-    }
-
-    .mobile-links a.active {
-      background: var(--primary-soft);
-      color: var(--primary);
-      border-color: rgba(37,99,235,0.18);
-    }
-
-    .back-to-top {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 16px 34px rgba(37,99,235,0.28);
-      cursor: pointer;
-      z-index: 60;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: var(--transition);
-    }
-
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .hidden-products {
-      display: none;
-    }
-
-    .show-all .hidden-products {
-      display: flex;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 1280px) {
-      .category-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .featured-products {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .benefits-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer-top {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 1100px) {
-      .header-inner {
-        grid-template-columns: 1fr;
-        padding: 16px 0;
-      }
-
-      .header-actions {
-        justify-content: flex-start;
-      }
-
-      .hero-grid,
-      .faq-grid {
+    @media (max-width: 780px) {
+      .grid-2, .grid-3, .grid-4, .stats, .category-row, .footer-grid {
         grid-template-columns: 1fr;
       }
-
-      .hero-main {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: 320px;
-      }
-
-      .pricing-grid,
-      .featured-products {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cta-box {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .topbar-inner,
-      .navbar-inner {
-        justify-content: center;
-      }
-
-      .nav-links,
-      .nav-right {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: grid;
-      }
-
-      .header-actions .login-btn {
-        display: none;
-      }
-
-      .hero-points,
-      .pricing-grid,
-      .featured-products,
-      .category-grid,
-      .plan-meta,
-      .product-actions,
-      .plan-actions,
-      .mini-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .floating-card.card-a,
-      .floating-card.card-b,
-      .floating-card.card-c {
-        position: relative;
-        width: 100%;
-        transform: none;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        margin-bottom: 14px;
-      }
-
-      .hero-card-stack {
-        min-height: auto;
-      }
-
-      .section {
-        padding: 56px 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 20px, var(--container));
-      }
-
-      .hero-content,
-      .promo-card,
-      .trust-card,
-      .pricing-shell,
-      .benefit-card,
-      .faq-intro,
-      .faq-list-wrap,
-      .cta-box {
-        padding: 22px;
-      }
-
-      .title {
-        font-size: 30px;
-      }
-
-      .hero-title {
-        font-size: 36px;
-      }
-
-      .plan-price strong,
-      .promo-price strong {
-        font-size: 30px;
-      }
-
-      .footer-top {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .header { align-items: stretch; }
+      .header-actions { width: 100%; }
+      .pill { flex: 1; text-align: center; }
+      .hero { margin: 16px; padding: 24px; }
+      .hero h1 { font-size: 30px; }
+      .container { padding: 0 16px 28px; }
+      .nav, .header, .topbar, .footer { padding-left: 16px; padding-right: 16px; }
+      .cta h2 { font-size: 26px; }
     }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-links">
-        <a href="#policy">Chính sách</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Liên hệ</a>
-      </div>
-      <div class="topbar-tools">
-        <select aria-label="Ngôn ngữ">
-          <option>Vietnamese</option>
-          <option>English</option>
-        </select>
-        <select aria-label="Tiền tệ">
-          <option>VND</option>
-          <option>USD</option>
-        </select>
-      </div>
+    <div class="group">
+      <span>Chính sách bảo hành</span>
+      <span>FAQ</span>
+      <span>Liên hệ</span>
+      <span>Hỗ trợ 24/7</span>
+    </div>
+    <div class="group">
+      <span>Ngôn ngữ: VI</span>
+      <span>Tiền tệ: VND</span>
+      <span>Hotline: 0123 456 789</span>
     </div>
   </div>
 
   <header class="header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        <span class="logo-mark">D</span>
-        <span class="logo-text">
-          DigitalMarket Pro
-          <small>Tài nguyên số chuẩn thương mại điện tử</small>
-        </span>
-      </a>
-
-      <div class="search-wrap">
-        <form class="search-box" id="searchForm">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Tìm đúng 1 sản phẩm: ChatGPT Plus, Adobe Creative Cloud, Netflix Premium..."
-            autocomplete="off"
-          />
-          <button class="search-btn" type="submit" aria-label="Tìm kiếm">🔍</button>
-        </form>
-      </div>
-
-      <div class="header-actions">
-        <button class="icon-btn" aria-label="Giỏ hàng">
-          🛒
-          <span class="badge-dot"></span>
-        </button>
-        <button class="icon-btn" aria-label="Yêu thích">❤</button>
-        <button class="icon-btn" aria-label="Hỗ trợ">💬</button>
-        <button class="icon-btn login-btn" aria-label="Đăng nhập">👤 Đăng nhập</button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu">☰</button>
-      </div>
+    <div class="logo">Premium<span>Hub</span></div>
+    <div class="search">
+      <input type="text" placeholder="Tìm Netflix, Spotify, YouTube Premium, Canva, ChatGPT, CapCut..." />
+      <button>Tìm kiếm</button>
+    </div>
+    <div class="header-actions">
+      <div class="pill">Yêu thích</div>
+      <div class="pill">Giỏ hàng</div>
+      <div class="pill">Hỗ trợ</div>
+      <div class="pill">Đăng nhập</div>
     </div>
   </header>
 
-  <nav class="navbar">
-    <div class="container navbar-inner">
-      <div class="nav-links">
-        <a href="#" class="active">Trang chủ</a>
-        <a href="#products">Sản phẩm</a>
-        <a href="#pricing">Bảng giá</a>
-        <a href="#promo">Khuyến mãi</a>
-        <a href="#guide">Hướng dẫn mua</a>
-        <a href="#contact">Liên hệ</a>
-      </div>
-      <div class="nav-right">
-        <span class="nav-chip">⚡ Giao tài khoản nhanh</span>
-        <span class="nav-chip">🛡️ Bảo hành rõ ràng</span>
-      </div>
-    </div>
+  <nav class="nav">
+    <ul>
+      <li><a class="active" href="#">Trang chủ</a></li>
+      <li><a href="#categories">Danh mục</a></li>
+      <li><a href="#pricing">Bảng giá</a></li>
+      <li><a href="#combo">Combo hot</a></li>
+      <li><a href="#compare">So sánh</a></li>
+      <li><a href="#reviews">Đánh giá</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
   </nav>
 
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-panel">
-      <div class="mobile-nav-head">
-        <div class="logo">
-          <span class="logo-mark">D</span>
-          <span class="logo-text">
-            DigitalMarket Pro
-            <small>Mua nhanh - dùng ổn định</small>
-          </span>
-        </div>
-        <button class="mobile-close" id="mobileClose">✕</button>
-      </div>
-      <div class="mobile-links">
-        <a href="#" class="active">Trang chủ</a>
-        <a href="#products">Sản phẩm</a>
-        <a href="#pricing">Bảng giá</a>
-        <a href="#promo">Khuyến mãi</a>
-        <a href="#guide">Hướng dẫn mua</a>
-        <a href="#contact">Liên hệ</a>
+  <section class="hero">
+    <div>
+      <span class="badge badge-hot">Giá tốt mỗi ngày</span>
+      <h1>Website bảng giá các loại tài khoản premium hiện đại, dễ bán, nhìn là muốn chốt đơn</h1>
+      <p>
+        Chuyên các loại tài khoản premium phổ biến như Netflix, Spotify, YouTube Premium, Canva Pro, ChatGPT Plus,
+        Adobe, CapCut Pro, Duolingo, Microsoft 365 và nhiều dịch vụ số khác. Giao diện sạch, chuyên nghiệp,
+        tối ưu chuyển đổi trên cả desktop và mobile.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Xem bảng giá</button>
+        <button class="btn btn-dark">Xem combo tiết kiệm</button>
       </div>
     </div>
-  </div>
+    <div class="hero-card">
+      <h3>Lý do khách chọn PremiumHub</h3>
+      <ul class="features">
+        <li>Tài khoản ổn định, dễ dùng, hỗ trợ nhanh</li>
+        <li>Giao tài khoản tự động hoặc thủ công tùy sản phẩm</li>
+        <li>Nhiều mốc thời hạn: 1 tháng, 3 tháng, 6 tháng, 12 tháng</li>
+        <li>Có combo tiết kiệm cho người dùng đa nền tảng</li>
+        <li>Thiết kế rõ sản phẩm, dễ so sánh và chốt đơn</li>
+      </ul>
+    </div>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-main">
-            <div class="hero-content">
-              <div class="hero-badge">🔥 Nền tảng bán sản phẩm kỹ thuật số chuyên nghiệp</div>
-              <h1 class="hero-title">
-                Bảng giá tài khoản số <span>đẹp, rõ, dễ bán</span> như website thương mại điện tử thật
-              </h1>
-              <p class="hero-desc">
-                Thiết kế hiện đại, bố cục dày dặn, tập trung vào chuyển đổi. Hiển thị bảng giá nổi bật,
-                card sản phẩm chuyên nghiệp, tìm kiếm ra đúng duy nhất 1 sản phẩm theo từ khóa cần tìm.
-              </p>
-              <div class="hero-actions">
-                <a href="#pricing" class="btn btn-primary">Xem bảng giá trọng tâm</a>
-                <a href="#products" class="btn btn-ghost">Khám phá sản phẩm</a>
-              </div>
-              <div class="hero-points">
-                <div class="hero-point">
-                  <strong>1.500+</strong>
-                  <span>Khách hàng đã mua tài khoản số</span>
-                </div>
-                <div class="hero-point">
-                  <strong>24/7</strong>
-                  <span>Hỗ trợ kỹ thuật và xử lý lỗi</span>
-                </div>
-                <div class="hero-point">
-                  <strong>99%</strong>
-                  <span>Tỷ lệ giao tài khoản thành công</span>
-                </div>
-              </div>
-            </div>
+  <main class="container">
+    <section>
+      <div class="stats">
+        <div class="stat-box">
+          <h3>Sản phẩm premium</h3>
+          <div class="number">120+</div>
+          <p class="muted">Đa dạng dịch vụ số phổ biến</p>
+        </div>
+        <div class="stat-box">
+          <h3>Đơn hoàn tất</h3>
+          <div class="number">8.5K</div>
+          <p class="muted">Tăng độ tin cậy khi mua</p>
+        </div>
+        <div class="stat-box">
+          <h3>Khách quay lại</h3>
+          <div class="number">92%</div>
+          <p class="muted">Tỉ lệ giữ chân cao</p>
+        </div>
+        <div class="stat-box">
+          <h3>Hỗ trợ phản hồi</h3>
+          <div class="number">24/7</div>
+          <p class="muted">Nhanh, rõ, đúng vấn đề</p>
+        </div>
+      </div>
+    </section>
 
-            <div class="hero-visual">
-              <div class="hero-card-stack">
-                <div class="floating-card card-a">
-                  <div class="mini-label">Phổ biến</div>
-                  <h4>Gói Tiêu Chuẩn bán chạy nhất</h4>
-                  <p>Phù hợp người dùng cá nhân, team nhỏ, cần giá tốt và thời hạn lâu hơn.</p>
-                  <div class="mini-tags">
-                    <span>3 tháng</span>
-                    <span>2 thiết bị</span>
-                    <span>BH 30 ngày</span>
-                  </div>
-                </div>
+    <section id="categories">
+      <div class="section-title">
+        <h2>Danh mục tài khoản premium</h2>
+        <span class="muted">Thiết kế dạng card bo góc, hiện đại, dễ nhìn</span>
+      </div>
+      <div class="category-row">
+        <div class="card category-card">
+          <div class="icon-box">🎬</div>
+          <h3>Giải trí</h3>
+          <p class="muted">Netflix, Disney+, FPT Play, VieON, HBO Max...</p>
+        </div>
+        <div class="card category-card">
+          <div class="icon-box">🎵</div>
+          <h3>Âm nhạc</h3>
+          <p class="muted">Spotify Premium, YouTube Music, Apple Music...</p>
+        </div>
+        <div class="card category-card">
+          <div class="icon-box">💼</div>
+          <h3>Làm việc</h3>
+          <p class="muted">Microsoft 365, Notion AI, Grammarly, Zoom Pro...</p>
+        </div>
+        <div class="card category-card">
+          <div class="icon-box">🎨</div>
+          <h3>Thiết kế</h3>
+          <p class="muted">Canva Pro, Adobe CC, Envato Elements...</p>
+        </div>
+        <div class="card category-card">
+          <div class="icon-box">🤖</div>
+          <h3>AI Tools</h3>
+          <p class="muted">ChatGPT Plus, Claude, Midjourney, ElevenLabs...</p>
+        </div>
+        <div class="card category-card">
+          <div class="icon-box">📚</div>
+          <h3>Học tập</h3>
+          <p class="muted">Duolingo, Coursera, Udemy, Quizlet Plus...</p>
+        </div>
+      </div>
+    </section>
 
-                <div class="floating-card card-b">
-                  <div class="mini-label">Bán hàng</div>
-                  <h4>Tối ưu landing page theo kiểu ecommerce thật</h4>
-                  <p>Header, menu, hero, pricing, card sản phẩm, FAQ và footer đầy đủ.</p>
-                  <div class="mini-tags">
-                    <span>Responsive</span>
-                    <span>Hover đẹp</span>
-                    <span>Tìm kiếm 1 SP</span>
-                  </div>
-                </div>
-
-                <div class="floating-card card-c">
-                  <div class="mini-label">Ưu đãi</div>
-                  <h4>Giảm sâu tới 40%</h4>
-                  <p>Hiển thị giá gốc, giá sale, badge giảm giá rõ ràng và chuyên nghiệp.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-side" id="promo">
-            <div class="promo-card">
-              <h3>Deal nổi bật hôm nay cho tài nguyên số bán chạy</h3>
-              <p>
-                Tổng hợp các gói hot: ChatGPT Plus, Adobe Creative Cloud, Netflix Premium, Canva Pro,
-                Figma Edu... trình bày như web bán hàng thật, dễ chốt đơn và dễ sửa nội dung.
-              </p>
-              <div class="promo-row">
-                <span class="promo-pill">Giao nhanh</span>
-                <span class="promo-pill">Tài khoản ổn định</span>
-                <span class="promo-pill">Hỗ trợ tận tình</span>
-              </div>
-              <div class="promo-price">
-                <strong>Chỉ từ 99.000đ</strong>
-                <del>159.000đ</del>
-              </div>
-            </div>
-
-            <div class="trust-card">
-              <h4>Lý do khách chọn mua tại đây</h4>
-              <div class="trust-list">
-                <div class="trust-item">
-                  <div class="trust-icon">✓</div>
-                  <div>
-                    <h5>Thông tin gói rõ ràng</h5>
-                    <p>Thời hạn, số thiết bị, loại tài khoản, bảo hành và quyền lợi hiển thị đầy đủ.</p>
-                  </div>
-                </div>
-                <div class="trust-item">
-                  <div class="trust-icon">⚡</div>
-                  <div>
-                    <h5>Giao tài khoản nhanh</h5>
-                    <p>Tự động hoặc thủ công tùy loại sản phẩm, có hướng dẫn sử dụng ngay khi mua.</p>
-                  </div>
-                </div>
-                <div class="trust-item">
-                  <div class="trust-icon">🛡</div>
-                  <div>
-                    <h5>Hậu mãi minh bạch</h5>
-                    <p>Hỗ trợ kỹ thuật và xử lý lỗi trong thời gian bảo hành theo từng gói cụ thể.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section id="pricing">
+      <div class="section-title">
+        <h2>Bảng giá tài khoản nổi bật</h2>
+        <span class="muted">Phần trọng tâm để bán hàng rõ sản phẩm</span>
+      </div>
+      <div class="grid grid-3">
+        <div class="card account-card">
+          <span class="badge badge-hot">Hot</span>
+          <h3>Netflix Premium</h3>
+          <p class="muted">Xem phim 4K, profile riêng, dùng ổn định.</p>
+          <div class="old-price">79.000đ</div>
+          <div class="price">49.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>1 profile riêng tư</li>
+            <li>Hỗ trợ kích hoạt nhanh</li>
+            <li>Bảo hành theo thời hạn</li>
+            <li>Phù hợp xem TV / điện thoại / máy tính</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
           </div>
         </div>
 
-        <div class="ticker-wrap">
-          <div class="ticker">
-            <div class="ticker-item">
-              <div class="ticker-icon">🎁</div>
-              <div>
-                <strong>Nhiều ưu đãi theo gói</strong>
-                <span>Kết hợp tài khoản số để được giá tốt hơn</span>
-              </div>
-            </div>
-            <div class="ticker-item">
-              <div class="ticker-icon">🚀</div>
-              <div>
-                <strong>Website tối ưu bán hàng</strong>
-                <span>Bố cục dày dặn, rõ ràng, giống ecommerce thật</span>
-              </div>
-            </div>
-            <div class="ticker-item">
-              <div class="ticker-icon">🔍</div>
-              <div>
-                <strong>Tìm kiếm ra đúng 1 sản phẩm</strong>
-                <span>Nhập từ khóa sẽ lọc đúng duy nhất sản phẩm cần tìm</span>
-              </div>
-            </div>
-            <div class="ticker-item">
-              <div class="ticker-icon">📞</div>
-              <div>
-                <strong>Hỗ trợ 24/7</strong>
-                <span>Luôn có kênh hỗ trợ nhanh qua chat, mail, hotline</span>
-              </div>
-            </div>
+        <div class="card account-card highlight">
+          <span class="badge">Phổ biến</span>
+          <h3>Spotify Premium</h3>
+          <p class="muted">Nghe nhạc không quảng cáo, tải offline, chất lượng cao.</p>
+          <div class="old-price">69.000đ</div>
+          <div class="price">39.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Không quảng cáo</li>
+            <li>Bỏ qua bài không giới hạn</li>
+            <li>Nghe offline tiện lợi</li>
+            <li>Hỗ trợ đổi lỗi nhanh</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card">
+          <span class="badge badge-new">Mới</span>
+          <h3>YouTube Premium</h3>
+          <p class="muted">Xem YouTube không quảng cáo, phát nền, tải video.</p>
+          <div class="old-price">89.000đ</div>
+          <div class="price">55.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Không quảng cáo</li>
+            <li>Nghe nhạc khi tắt màn hình</li>
+            <li>Hỗ trợ đa thiết bị</li>
+            <li>Phù hợp học tập và giải trí</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card">
+          <span class="badge">Thiết kế</span>
+          <h3>Canva Pro</h3>
+          <p class="muted">Kho template lớn, xóa nền, resize, brand kit.</p>
+          <div class="old-price">129.000đ</div>
+          <div class="price">69.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Dùng cho thiết kế social, banner, post</li>
+            <li>Xuất file chất lượng cao</li>
+            <li>Kho tài nguyên premium</li>
+            <li>Phù hợp creator và seller</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card">
+          <span class="badge badge-hot">AI</span>
+          <h3>ChatGPT Plus</h3>
+          <p class="muted">Hỗ trợ học tập, viết nội dung, nghiên cứu và làm việc nhanh hơn.</p>
+          <div class="old-price">349.000đ</div>
+          <div class="price">219.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Tốc độ phản hồi tốt</li>
+            <li>Dùng cho học tập và công việc</li>
+            <li>Hỗ trợ người sáng tạo nội dung</li>
+            <li>Phù hợp cá nhân / freelancer</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
+          </div>
+        </div>
+
+        <div class="card account-card">
+          <span class="badge">Video</span>
+          <h3>CapCut Pro</h3>
+          <p class="muted">Mở khóa hiệu ứng, template và công cụ chỉnh sửa nâng cao.</p>
+          <div class="old-price">149.000đ</div>
+          <div class="price">79.000đ <small>/ tháng</small></div>
+          <ul class="features">
+            <li>Hiệu ứng và template premium</li>
+            <li>Phù hợp TikTok, Reels, Shorts</li>
+            <li>Hỗ trợ creator bán hàng</li>
+            <li>Dễ dùng trên mobile và desktop</li>
+          </ul>
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" style="flex:1;">Mua ngay</button>
+            <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="categories">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="eyebrow">Danh mục nổi bật</span>
-            <h2 class="title">Khối danh mục dạng icon/card bo góc, nhìn hiện đại và dễ chọn</h2>
-            <p class="desc">
-              Gom nhóm các loại sản phẩm kỹ thuật số phổ biến để người mua duyệt nhanh hơn và tăng tỷ lệ chuyển đổi.
-            </p>
-          </div>
-          <a href="#products" class="btn btn-secondary">Xem toàn bộ sản phẩm</a>
+    <section id="combo">
+      <div class="section-title">
+        <h2>Combo tiết kiệm bán chạy</h2>
+        <span class="muted">Thiết kế để tăng AOV và chốt đơn nhanh</span>
+      </div>
+      <div class="grid grid-3">
+        <div class="card combo-card">
+          <span class="badge badge-hot">Giải trí</span>
+          <h3>Combo Chill Hằng Ngày</h3>
+          <div class="price">99.000đ <small>/ tháng</small></div>
+          <p class="muted">Netflix Premium + Spotify Premium + YouTube Premium</p>
+          <ul class="features">
+            <li>Tiết kiệm hơn mua lẻ</li>
+            <li>Phù hợp người thích giải trí toàn diện</li>
+            <li>Hỗ trợ nhanh khi có lỗi</li>
+          </ul>
+          <div style="margin-top:16px;"><button class="btn btn-primary" style="width:100%;">Mua combo</button></div>
         </div>
-
-        <div class="category-grid">
-          <article class="category-card">
-            <div class="category-icon">🤖</div>
-            <div>
-              <h3>Tài khoản AI</h3>
-              <p>ChatGPT Plus, Claude, Gemini, Copilot, SuperGrok và nhiều dịch vụ AI khác.</p>
-            </div>
-            <div class="category-meta">
-              <span>18 sản phẩm</span>
-              <span>→</span>
-            </div>
-          </article>
-
-          <article class="category-card">
-            <div class="category-icon">🎬</div>
-            <div>
-              <h3>Giải trí</h3>
-              <p>Netflix Premium, Spotify, YouTube Premium, Disney+ và các nền tảng xem phim nghe nhạc.</p>
-            </div>
-            <div class="category-meta">
-              <span>24 sản phẩm</span>
-              <span>→</span>
-            </div>
-          </article>
-
-          <article class="category-card">
-            <div class="category-icon">🎨</div>
-            <div>
-              <h3>Thiết kế</h3>
-              <p>Adobe Creative Cloud, Canva Pro, Freepik Premium, Figma Edu, Envato Elements.</p>
-            </div>
-            <div class="category-meta">
-              <span>15 sản phẩm</span>
-              <span>→</span>
-            </div>
-          </article>
-
-          <article class="category-card">
-            <div class="category-icon">🛡️</div>
-            <div>
-              <h3>Bảo mật & VPN</h3>
-              <p>NordVPN, ExpressVPN, LastPass, 1Password, công cụ bảo vệ dữ liệu cá nhân.</p>
-            </div>
-            <div class="category-meta">
-              <span>12 sản phẩm</span>
-              <span>→</span>
-            </div>
-          </article>
-
-          <article class="category-card">
-            <div class="category-icon">💼</div>
-            <div>
-              <h3>Làm việc</h3>
-              <p>Microsoft 365, Notion AI, Zoom Pro, Google Workspace và tài nguyên phục vụ công việc.</p>
-            </div>
-            <div class="category-meta">
-              <span>17 sản phẩm</span>
-              <span>→</span>
-            </div>
-          </article>
-
-          <article class="category-card">
-            <div class="category-icon">📚</div>
-            <div>
-              <h3>Học tập</h3>
-              <p>Các gói học online, lưu trữ tài liệu, công cụ học tập và nghiên cứu tiện lợi.</p>
-            </div>
-            <div class="category-meta">
-              <span>10 sản phẩm</span>
-              <span>→</span>
-            </div>
-          </article>
+        <div class="card combo-card">
+          <span class="badge">Creator</span>
+          <h3>Combo Sáng Tạo Nội Dung</h3>
+          <div class="price">289.000đ <small>/ tháng</small></div>
+          <p class="muted">Canva Pro + CapCut Pro + ChatGPT Plus</p>
+          <ul class="features">
+            <li>Phù hợp seller, marketer, content creator</li>
+            <li>Dễ thiết kế, viết và dựng video</li>
+            <li>Rõ sản phẩm, bán hàng tiện hơn</li>
+          </ul>
+          <div style="margin-top:16px;"><button class="btn btn-primary" style="width:100%;">Mua combo</button></div>
+        </div>
+        <div class="card combo-card">
+          <span class="badge badge-new">Làm việc</span>
+          <h3>Combo Office Pro</h3>
+          <div class="price">199.000đ <small>/ tháng</small></div>
+          <p class="muted">Microsoft 365 + Grammarly Premium + Notion AI</p>
+          <ul class="features">
+            <li>Phù hợp học tập và công việc</li>
+            <li>Tăng hiệu suất cá nhân</li>
+            <li>Dùng tốt cho freelancer và team nhỏ</li>
+          </ul>
+          <div style="margin-top:16px;"><button class="btn btn-primary" style="width:100%;">Mua combo</button></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="eyebrow">Bảng giá trọng tâm</span>
-            <h2 class="title">Section bảng giá đẹp, cao cấp, rõ từng quyền lợi và dễ so sánh</h2>
-            <p class="desc">
-              Ba gói được trình bày theo phong cách bán hàng thật: nổi bật giá sale, hiển thị quyền lợi, đối tượng phù hợp,
-              hỗ trợ kỹ thuật, bảo hành, số thiết bị và bảng so sánh chi tiết bằng tick/check.
-            </p>
-          </div>
+    <section id="compare">
+      <div class="section-title">
+        <h2>Bảng so sánh nhanh</h2>
+        <span class="muted">Giúp khách dễ chọn đúng gói</span>
+      </div>
+      <div class="compare-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Thời hạn</th>
+              <th>Loại sử dụng</th>
+              <th>Bảo hành</th>
+              <th>Giá bán</th>
+              <th>Phù hợp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Netflix Premium</td>
+              <td>1 tháng</td>
+              <td>Profile riêng</td>
+              <td>Theo thời hạn</td>
+              <td>49.000đ</td>
+              <td>Xem phim, giải trí</td>
+            </tr>
+            <tr>
+              <td>Spotify Premium</td>
+              <td>1 tháng</td>
+              <td>Tài khoản riêng</td>
+              <td>Theo thời hạn</td>
+              <td>39.000đ</td>
+              <td>Nghe nhạc hằng ngày</td>
+            </tr>
+            <tr>
+              <td>Canva Pro</td>
+              <td>1 tháng</td>
+              <td>Join team / account</td>
+              <td>Theo thời hạn</td>
+              <td>69.000đ</td>
+              <td>Thiết kế bán hàng</td>
+            </tr>
+            <tr>
+              <td>ChatGPT Plus</td>
+              <td>1 tháng</td>
+              <td>Tài khoản hoặc share</td>
+              <td>Theo gói</td>
+              <td>219.000đ</td>
+              <td>AI học tập / công việc</td>
+            </tr>
+            <tr>
+              <td>CapCut Pro</td>
+              <td>1 tháng</td>
+              <td>Account premium</td>
+              <td>Theo thời hạn</td>
+              <td>79.000đ</td>
+              <td>Dựng video ngắn</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Vì sao nên mua tại đây</h2>
+        <span class="muted">Khối tăng độ tin cậy bán hàng</span>
+      </div>
+      <div class="grid grid-4">
+        <div class="card benefit-card">
+          <div class="icon-box">⚡</div>
+          <h3>Giao nhanh</h3>
+          <p class="muted">Xử lý đơn nhanh, giảm thời gian chờ của khách.</p>
         </div>
-
-        <div class="pricing-shell">
-          <div class="pricing-top">
-            <div class="pricing-badges">
-              <span>✔ Thiết kế cao cấp</span>
-              <span>✔ Hover mượt</span>
-              <span>✔ Tiêu Chuẩn là gói nổi bật nhất</span>
-              <span>✔ Có bảng so sánh chi tiết</span>
-            </div>
-            <a href="#products" class="btn btn-secondary">Xem sản phẩm bên dưới</a>
-          </div>
-
-          <div class="pricing-grid">
-            <article class="plan-card">
-              <div class="plan-head">
-                <div class="plan-name">
-                  <h3>Cơ Bản</h3>
-                  <span class="discount-badge">-20%</span>
-                </div>
-                <div class="plan-price">
-                  <strong>99.000đ</strong>
-                  <small>/ 1 tháng</small>
-                </div>
-                <div class="plan-origin">
-                  <del>129.000đ</del>
-                  <span class="save-chip">Tiết kiệm 30.000đ</span>
-                </div>
-                <div class="plan-meta">
-                  <div class="meta-box">
-                    <span>Số thiết bị</span>
-                    <strong>1 thiết bị</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Bảo hành</span>
-                    <strong>7 ngày</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Loại tài khoản</span>
-                    <strong>Chia sẻ tối ưu chi phí</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Hỗ trợ</span>
-                    <strong>Tiêu chuẩn</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div class="plan-body">
-                <div class="plan-block">
-                  <h4>Quyền lợi nổi bật</h4>
-                  <ul class="feature-list">
-                    <li><i>✓</i><span>Dùng ngay sau khi thanh toán, giao nhanh qua chat/email.</span></li>
-                    <li><i>✓</i><span>Phù hợp nhu cầu cơ bản, tối ưu chi phí cho người dùng mới.</span></li>
-                    <li><i>✓</i><span>Có hướng dẫn đăng nhập và sử dụng chi tiết.</span></li>
-                    <li><i>✓</i><span>Hỗ trợ lỗi đăng nhập trong thời gian bảo hành.</span></li>
-                    <li><i>✓</i><span>Giao diện quản lý đơn hàng rõ ràng, dễ theo dõi.</span></li>
-                  </ul>
-                </div>
-
-                <div class="support-box">
-                  <h4>Hỗ trợ kỹ thuật</h4>
-                  <p>Ưu tiên hỗ trợ trong giờ hành chính, xử lý lỗi cơ bản và các vấn đề đăng nhập phổ biến.</p>
-                </div>
-
-                <div class="fit-box">
-                  <h4>Đối tượng phù hợp</h4>
-                  <p>Sinh viên, người dùng cá nhân, khách muốn trải nghiệm thử trước khi nâng cấp lên gói cao hơn.</p>
-                </div>
-
-                <div class="plan-actions">
-                  <a href="#" class="btn btn-primary">Mua ngay</a>
-                  <a href="#" class="btn btn-secondary">Xem chi tiết</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="plan-card popular">
-              <div class="plan-ribbon">Phổ biến nhất</div>
-              <div class="plan-head">
-                <div class="plan-name">
-                  <h3>Tiêu Chuẩn</h3>
-                  <span class="discount-badge">-30%</span>
-                </div>
-                <div class="plan-price">
-                  <strong>199.000đ</strong>
-                  <small>/ 3 tháng</small>
-                </div>
-                <div class="plan-origin">
-                  <del>285.000đ</del>
-                  <span class="save-chip">Tiết kiệm 86.000đ</span>
-                </div>
-                <div class="plan-meta">
-                  <div class="meta-box">
-                    <span>Số thiết bị</span>
-                    <strong>2 thiết bị</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Bảo hành</span>
-                    <strong>30 ngày</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Loại tài khoản</span>
-                    <strong>Cá nhân / Team nhỏ</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Hỗ trợ</span>
-                    <strong>Ưu tiên nhanh</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div class="plan-body">
-                <div class="plan-block">
-                  <h4>Quyền lợi nổi bật</h4>
-                  <ul class="feature-list">
-                    <li><i>✓</i><span>Giá tốt nhất theo hiệu năng sử dụng, thời hạn dài hơn hẳn gói cơ bản.</span></li>
-                    <li><i>✓</i><span>Dùng được trên 2 thiết bị, tiện cho cá nhân hoặc nhóm nhỏ.</span></li>
-                    <li><i>✓</i><span>Ưu tiên hỗ trợ khi gặp lỗi, xử lý nhanh hơn.</span></li>
-                    <li><i>✓</i><span>Có cập nhật hướng dẫn mới khi nền tảng thay đổi giao diện.</span></li>
-                    <li><i>✓</i><span>Phù hợp nhất để bán hàng vì card nổi bật và giá trị rõ ràng.</span></li>
-                  </ul>
-                </div>
-
-                <div class="support-box">
-                  <h4>Hỗ trợ kỹ thuật</h4>
-                  <p>Hỗ trợ ưu tiên qua chat, có kiểm tra lỗi nhanh, tư vấn nâng cấp và đổi phương án sử dụng khi cần.</p>
-                </div>
-
-                <div class="fit-box">
-                  <h4>Đối tượng phù hợp</h4>
-                  <p>Người dùng thường xuyên, freelancer, creator, dân văn phòng, team nhỏ cần dùng ổn định với chi phí hợp lý.</p>
-                </div>
-
-                <div class="plan-actions">
-                  <a href="#" class="btn btn-primary">Mua ngay</a>
-                  <a href="#" class="btn btn-secondary">Xem chi tiết</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <div class="plan-head">
-                <div class="plan-name">
-                  <h3>Cao Cấp</h3>
-                  <span class="discount-badge">-35%</span>
-                </div>
-                <div class="plan-price">
-                  <strong>399.000đ</strong>
-                  <small>/ 12 tháng</small>
-                </div>
-                <div class="plan-origin">
-                  <del>615.000đ</del>
-                  <span class="save-chip">Tiết kiệm 216.000đ</span>
-                </div>
-                <div class="plan-meta">
-                  <div class="meta-box">
-                    <span>Số thiết bị</span>
-                    <strong>5 thiết bị</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Bảo hành</span>
-                    <strong>90 ngày</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Loại tài khoản</span>
-                    <strong>Ưu tiên ổn định lâu dài</strong>
-                  </div>
-                  <div class="meta-box">
-                    <span>Hỗ trợ</span>
-                    <strong>Cao cấp 1-1</strong>
-                  </div>
-                </div>
-              </div>
-
-              <div class="plan-body">
-                <div class="plan-block">
-                  <h4>Quyền lợi nổi bật</h4>
-                  <ul class="feature-list">
-                    <li><i>✓</i><span>Thời hạn 12 tháng tối ưu cho khách dùng lâu dài và ít phải gia hạn.</span></li>
-                    <li><i>✓</i><span>Dùng tới 5 thiết bị, phù hợp nhóm làm việc hoặc gia đình.</span></li>
-                    <li><i>✓</i><span>Bảo hành dài, hỗ trợ kỹ thuật sát sao hơn các gói còn lại.</span></li>
-                    <li><i>✓</i><span>Ưu tiên cập nhật, tư vấn sử dụng hiệu quả và xử lý sự cố chuyên sâu.</span></li>
-                    <li><i>✓</i><span>Thích hợp làm gói premium để tăng giá trị giỏ hàng.</span></li>
-                  </ul>
-                </div>
-
-                <div class="support-box">
-                  <h4>Hỗ trợ kỹ thuật</h4>
-                  <p>Hỗ trợ chuyên sâu, theo dõi lỗi, hướng dẫn sử dụng nâng cao và phản hồi ưu tiên cho khách premium.</p>
-                </div>
-
-                <div class="fit-box">
-                  <h4>Đối tượng phù hợp</h4>
-                  <p>Doanh nghiệp nhỏ, agency, người dùng chuyên nghiệp hoặc khách cần gói ổn định, lâu dài, nhiều thiết bị.</p>
-                </div>
-
-                <div class="plan-actions">
-                  <a href="#" class="btn btn-primary">Mua ngay</a>
-                  <a href="#" class="btn btn-secondary">Xem chi tiết</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="compare-wrap">
-            <div class="compare-head">
-              <div>
-                <h3>Bảng so sánh tính năng chi tiết</h3>
-                <p>So sánh nhanh để khách chọn đúng gói theo nhu cầu và ngân sách.</p>
-              </div>
-            </div>
-
-            <div class="compare-table-wrap">
-              <table class="compare-table">
-                <thead>
-                  <tr>
-                    <th>Tính năng</th>
-                    <th>Cơ Bản</th>
-                    <th class="highlight-col">Tiêu Chuẩn</th>
-                    <th>Cao Cấp</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Thời hạn sử dụng</td>
-                    <td>1 tháng</td>
-                    <td class="highlight-col">3 tháng</td>
-                    <td>12 tháng</td>
-                  </tr>
-                  <tr>
-                    <td>Số thiết bị</td>
-                    <td>1</td>
-                    <td class="highlight-col">2</td>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <td>Loại tài khoản</td>
-                    <td>Tiết kiệm</td>
-                    <td class="highlight-col">Cân bằng tốt nhất</td>
-                    <td>Premium</td>
-                  </tr>
-                  <tr>
-                    <td>Bảo hành</td>
-                    <td>7 ngày</td>
-                    <td class="highlight-col">30 ngày</td>
-                    <td>90 ngày</td>
-                  </tr>
-                  <tr>
-                    <td>Hỗ trợ kỹ thuật ưu tiên</td>
-                    <td><span class="cross">—</span></td>
-                    <td class="highlight-col"><span class="tick">✓</span></td>
-                    <td><span class="tick">✓</span></td>
-                  </tr>
-                  <tr>
-                    <td>Hướng dẫn sử dụng chi tiết</td>
-                    <td><span class="tick">✓</span></td>
-                    <td class="highlight-col"><span class="tick">✓</span></td>
-                    <td><span class="tick">✓</span></td>
-                  </tr>
-                  <tr>
-                    <td>Hỗ trợ nhiều thiết bị</td>
-                    <td><span class="cross">—</span></td>
-                    <td class="highlight-col"><span class="tick">✓</span></td>
-                    <td><span class="tick">✓</span></td>
-                  </tr>
-                  <tr>
-                    <td>Tư vấn nâng cao</td>
-                    <td><span class="cross">—</span></td>
-                    <td class="highlight-col"><span class="tick">✓</span></td>
-                    <td><span class="tick">✓</span></td>
-                  </tr>
-                  <tr>
-                    <td>Phù hợp team / doanh nghiệp nhỏ</td>
-                    <td><span class="cross">—</span></td>
-                    <td class="highlight-col"><span class="tick">✓</span></td>
-                    <td><span class="tick">✓</span></td>
-                  </tr>
-                  <tr>
-                    <td>Ưu tiên phản hồi 1-1</td>
-                    <td><span class="cross">—</span></td>
-                    <td class="highlight-col"><span class="cross">—</span></td>
-                    <td><span class="tick">✓</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div class="card benefit-card">
+          <div class="icon-box">🛡️</div>
+          <h3>Bảo hành rõ ràng</h3>
+          <p class="muted">Chính sách minh bạch theo từng loại sản phẩm.</p>
+        </div>
+        <div class="card benefit-card">
+          <div class="icon-box">💬</div>
+          <h3>Hỗ trợ tận tâm</h3>
+          <p class="muted">Có người hỗ trợ khi gặp lỗi kích hoạt hoặc đăng nhập.</p>
+        </div>
+        <div class="card benefit-card">
+          <div class="icon-box">💸</div>
+          <h3>Giá cạnh tranh</h3>
+          <p class="muted">Nhiều mốc giá và combo để khách dễ chọn hơn.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="products">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="eyebrow">Sản phẩm nổi bật</span>
-            <h2 class="title">Danh sách card sản phẩm chuyên nghiệp, dày dặn và tối ưu bán hàng</h2>
-            <p class="desc">
-              Mỗi sản phẩm có ảnh mô phỏng, giá, nhãn trạng thái, mô tả ngắn, nút mua và nút chi tiết như một web bán hàng thật.
-            </p>
-          </div>
-          <button class="btn btn-secondary" id="toggleProductsBtn">Xem thêm sản phẩm</button>
+    <section id="reviews">
+      <div class="section-title">
+        <h2>Đánh giá khách hàng</h2>
+        <span class="muted">Tăng uy tín và tỉ lệ chốt đơn</span>
+      </div>
+      <div class="grid grid-3">
+        <div class="card review-card">
+          <h3>Ngọc Minh</h3>
+          <p class="muted">“Mua Canva Pro dùng ổn, hỗ trợ nhanh, giá mềm hơn khá nhiều so với mua lẻ.”</p>
         </div>
-
-        <div class="search-result-box" id="searchResultBox">
-          <p class="search-note" id="searchNote"></p>
-          <div id="searchResultContainer"></div>
+        <div class="card review-card">
+          <h3>Khánh Ly</h3>
+          <p class="muted">“Combo Netflix + Spotify rất tiện, thanh toán xong được hỗ trợ ngay.”</p>
         </div>
-
-        <div class="featured-products" id="productGrid">
-          <article class="product-card product-item" data-keywords="chatgpt plus ai openai tài khoản chatgpt">
-            <div class="product-media">
-              <span class="sale-tag">Sale 71%</span>
-              <div class="media-box">ChatGPT<br />Plus</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">AI cao cấp</span>
-                <span class="product-status">Giao ngay</span>
-              </div>
-              <h3>ChatGPT Plus</h3>
-              <p>Dành cho người dùng AI thường xuyên, phản hồi nhanh hơn, ưu tiên tính năng mới và trải nghiệm ổn định.</p>
-              <div class="product-price-row">
-                <strong>50.000đ</strong>
-                <del>560.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 43</span>
-                <span>Hỗ trợ 24/7</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item" data-keywords="adobe creative cloud adobe cc photoshop premiere illustrator">
-            <div class="product-media alt-2">
-              <span class="sale-tag">Giảm 89%</span>
-              <div class="media-box">Adobe Creative<br />Cloud</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Thiết kế</span>
-                <span class="product-status">Còn hàng</span>
-              </div>
-              <h3>Adobe Creative Cloud All Apps</h3>
-              <p>Trọn bộ ứng dụng thiết kế, chỉnh ảnh, dựng video, sáng tạo nội dung dành cho creator và designer.</p>
-              <div class="product-price-row">
-                <strong>375.000đ</strong>
-                <del>1.650.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 6</span>
-                <span>Full app</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-                    <article class="product-card product-item" data-keywords="netflix premium xem phim 4k full hd giải trí">
-            <div class="product-media alt-3">
-              <span class="sale-tag">Giảm 85%</span>
-              <div class="media-box">Netflix<br />Premium</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Giải trí</span>
-                <span class="product-status">Bán chạy</span>
-              </div>
-              <h3>Netflix Premium 4K</h3>
-              <p>Xem phim chất lượng cao, hỗ trợ 4K, kho nội dung đa dạng và phù hợp người dùng thích giải trí ổn định.</p>
-              <div class="product-price-row">
-                <strong>112.500đ</strong>
-                <del>750.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 92</span>
-                <span>Gia hạn nhanh</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item" data-keywords="figma edu figma thiết kế ui ux sinh viên">
-            <div class="product-media alt-4">
-              <span class="sale-tag">1 Năm</span>
-              <div class="media-box">Figma<br />Edu</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">UI/UX</span>
-                <span class="product-status">Ổn định</span>
-              </div>
-              <h3>Figma Edu</h3>
-              <p>Phù hợp sinh viên, designer và team nhỏ cần công cụ thiết kế giao diện, prototype và cộng tác online.</p>
-              <div class="product-price-row">
-                <strong>300.000đ</strong>
-                <del>523.500đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 4</span>
-                <span>Cộng tác tốt</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item hidden-products" data-keywords="canva pro thiết kế social banner bài đăng">
-            <div class="product-media">
-              <span class="sale-tag">Hot</span>
-              <div class="media-box">Canva<br />Pro</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Thiết kế nhanh</span>
-                <span class="product-status">Giao ngay</span>
-              </div>
-              <h3>Canva Pro</h3>
-              <p>Tối ưu cho người bán hàng online, designer cơ bản, creator cần template đẹp và kho tài nguyên lớn.</p>
-              <div class="product-price-row">
-                <strong>89.000đ</strong>
-                <del>299.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 128</span>
-                <span>Dễ sử dụng</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item hidden-products" data-keywords="spotify premium nghe nhạc không quảng cáo">
-            <div class="product-media alt-2">
-              <span class="sale-tag">Sale 68%</span>
-              <div class="media-box">Spotify<br />Premium</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Âm nhạc</span>
-                <span class="product-status">Phổ biến</span>
-              </div>
-              <h3>Spotify Premium</h3>
-              <p>Nghe nhạc không quảng cáo, chuyển bài không giới hạn, chất lượng cao và tiện lợi cho mọi thiết bị.</p>
-              <div class="product-price-row">
-                <strong>59.000đ</strong>
-                <del>189.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 74</span>
-                <span>Active nhanh</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item hidden-products" data-keywords="youtube premium youtube không quảng cáo">
-            <div class="product-media alt-3">
-              <span class="sale-tag">Giảm sâu</span>
-              <div class="media-box">YouTube<br />Premium</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Video</span>
-                <span class="product-status">Còn hàng</span>
-              </div>
-              <h3>YouTube Premium</h3>
-              <p>Xem video không quảng cáo, phát nền trên điện thoại, trải nghiệm mượt mà hơn cho người dùng thường xuyên.</p>
-              <div class="product-price-row">
-                <strong>79.000đ</strong>
-                <del>209.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 51</span>
-                <span>Đăng ký nhanh</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item hidden-products" data-keywords="freepik premium mockup tài nguyên thiết kế">
-            <div class="product-media alt-4">
-              <span class="sale-tag">Giảm 73%</span>
-              <div class="media-box">Freepik<br />Premium</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Tài nguyên</span>
-                <span class="product-status">Liên hệ</span>
-              </div>
-              <h3>Freepik Premium</h3>
-              <p>Kho ảnh, vector, template, mockup khổng lồ dành cho designer, marketer và người làm nội dung.</p>
-              <div class="product-price-row">
-                <strong>129.000đ</strong>
-                <del>480.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 31</span>
-                <span>Tải tài nguyên tốt</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item hidden-products" data-keywords="nordvpn vpn bảo mật riêng tư">
-            <div class="product-media">
-              <span class="sale-tag">Bảo mật</span>
-              <div class="media-box">Nord<br />VPN</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">VPN</span>
-                <span class="product-status">An toàn</span>
-              </div>
-              <h3>NordVPN Premium</h3>
-              <p>Bảo mật kết nối, hỗ trợ truy cập an toàn, ổn định và phù hợp người dùng thường xuyên làm việc online.</p>
-              <div class="product-price-row">
-                <strong>145.000đ</strong>
-                <del>399.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 22</span>
-                <span>Bảo mật tốt</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-item hidden-products" data-keywords="lastpass premium quản lý mật khẩu bảo mật">
-            <div class="product-media alt-2">
-              <span class="sale-tag">Tiện ích</span>
-              <div class="media-box">LastPass<br />Premium</div>
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <span class="product-label">Bảo mật</span>
-                <span class="product-status">Ổn định</span>
-              </div>
-              <h3>LastPass Premium</h3>
-              <p>Quản lý mật khẩu an toàn, lưu thông tin đăng nhập tiện lợi và tăng hiệu suất làm việc hàng ngày.</p>
-              <div class="product-price-row">
-                <strong>95.000đ</strong>
-                <del>260.000đ</del>
-              </div>
-              <div class="product-meta">
-                <span>Đã bán 18</span>
-                <span>Đồng bộ nhiều máy</span>
-              </div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Mua ngay</a>
-                <a href="#" class="btn btn-secondary">Chi tiết</a>
-              </div>
-            </div>
-          </article>
+        <div class="card review-card">
+          <h3>Tuấn Anh</h3>
+          <p class="muted">“ChatGPT Plus và CapCut Pro dùng ổn cho công việc content hằng ngày.”</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="guide">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="eyebrow">Lý do nên mua</span>
-            <h2 class="title">Section tạo niềm tin mạnh, giúp người mua chốt đơn nhanh hơn</h2>
-            <p class="desc">
-              Không chỉ đẹp phần bảng giá, website còn cần khối lợi ích rõ ràng để tăng độ tin cậy và cảm giác chuyên nghiệp.
-            </p>
-          </div>
+    <section id="faq">
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <span class="muted">Giải đáp nhanh các câu hỏi thường gặp</span>
+      </div>
+      <div class="faq-list">
+        <div class="card faq-item">
+          <h3>Mua xong bao lâu nhận được tài khoản?</h3>
+          <p class="muted">Tùy sản phẩm, có thể nhận gần như ngay hoặc được hỗ trợ thủ công trong thời gian ngắn.</p>
         </div>
-
-        <div class="benefits-grid">
-          <article class="benefit-card">
-            <div class="benefit-icon">🛒</div>
-            <h3>Trải nghiệm mua hàng rõ ràng</h3>
-            <p>
-              Cấu trúc giống website thương mại điện tử thật với topbar, header, menu, banner, pricing, card sản phẩm,
-              FAQ và footer đầy đủ. Khách chỉ cần lướt là hiểu sản phẩm và chọn gói phù hợp.
-            </p>
-            <div class="mini-stats">
-              <div class="mini-stat">
-                <strong>3</strong>
-                <span>Gói giá rõ ràng</span>
-              </div>
-              <div class="mini-stat">
-                <strong>1</strong>
-                <span>Gói nổi bật nhất</span>
-              </div>
-              <div class="mini-stat">
-                <strong>100%</strong>
-                <span>Bố cục bán hàng</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon">⚡</div>
-            <h3>Tối ưu tốc độ chốt đơn</h3>
-            <p>
-              Khối bảng giá là trọng tâm, card đổ bóng đẹp, badge giảm giá rõ, nút CTA nổi bật và thông tin
-              bảo hành - thiết bị - quyền lợi được trình bày dễ so sánh, giúp khách ra quyết định nhanh hơn.
-            </p>
-            <div class="mini-stats">
-              <div class="mini-stat">
-                <strong>24/7</strong>
-                <span>Hỗ trợ kỹ thuật</span>
-              </div>
-              <div class="mini-stat">
-                <strong>30s</strong>
-                <span>Tìm thấy gói phù hợp</span>
-              </div>
-              <div class="mini-stat">
-                <strong>+40%</strong>
-                <span>Tăng chú ý CTA</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon">🔍</div>
-            <h3>Tìm kiếm ra đúng 1 sản phẩm</h3>
-            <p>
-              Ô tìm kiếm được xử lý bằng JavaScript để khi nhập từ khóa sẽ lọc ra đúng duy nhất sản phẩm gần nhất
-              với nhu cầu người dùng. Tránh rối mắt, đúng yêu cầu bán hàng gọn và chính xác.
-            </p>
-            <div class="mini-stats">
-              <div class="mini-stat">
-                <strong>1</strong>
-                <span>Kết quả ưu tiên</span>
-              </div>
-              <div class="mini-stat">
-                <strong>8+</strong>
-                <span>Từ khóa demo</span>
-              </div>
-              <div class="mini-stat">
-                <strong>Responsive</strong>
-                <span>Desktop / mobile</span>
-              </div>
-            </div>
-          </article>
+        <div class="card faq-item">
+          <h3>Có bảo hành không?</h3>
+          <p class="muted">Có. Mỗi sản phẩm sẽ có chính sách bảo hành riêng theo thời hạn hoặc theo điều kiện sử dụng.</p>
+        </div>
+        <div class="card faq-item">
+          <h3>Có hỗ trợ khi đăng nhập lỗi không?</h3>
+          <p class="muted">Có hỗ trợ kiểm tra và xử lý nếu lỗi thuộc phạm vi bảo hành của sản phẩm.</p>
+        </div>
+        <div class="card faq-item">
+          <h3>Có thể mua số lượng lớn không?</h3>
+          <p class="muted">Có thể thiết kế gói riêng cho đại lý, cộng tác viên hoặc team sử dụng số lượng nhiều.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="eyebrow">FAQ</span>
-            <h2 class="title">Giải đáp câu hỏi thường gặp trước khi mua</h2>
-            <p class="desc">
-              Khu FAQ giúp giảm tỷ lệ nhắn hỏi lặp lại, đồng thời làm website trông đầy đủ và chuyên nghiệp hơn.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-intro">
-            <h3>Cần hỗ trợ trước khi đặt hàng?</h3>
-            <p>
-              Bạn có thể liên hệ qua chat, email hoặc hotline để được tư vấn chọn gói phù hợp theo ngân sách,
-              số thiết bị cần dùng và mục đích sử dụng.
-            </p>
-
-            <div class="faq-contact">
-              <div class="faq-contact-item">
-                <div class="faq-contact-icon">💬</div>
-                <div>
-                  <h4>Chat hỗ trợ</h4>
-                  <p>Phản hồi nhanh các câu hỏi về sản phẩm, đăng nhập, gia hạn và lỗi kỹ thuật.</p>
-                </div>
-              </div>
-
-              <div class="faq-contact-item">
-                <div class="faq-contact-icon">📞</div>
-                <div>
-                  <h4>Hotline 24/7</h4>
-                  <p>09xx.xxx.xxx</p>
-                </div>
-              </div>
-
-              <div class="faq-contact-item">
-                <div class="faq-contact-icon">✉️</div>
-                <div>
-                  <h4>Email hỗ trợ</h4>
-                  <p>support@digitalmarketpro.vn</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-list-wrap">
-            <div class="faq-item active">
-              <button class="faq-question" type="button">
-                <strong>Sau khi thanh toán thì bao lâu nhận được tài khoản?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer" style="max-height: 200px;">
-                <p>Phần lớn sản phẩm sẽ được giao trong thời gian rất nhanh. Một số gói cần xử lý thủ công hoặc xác nhận riêng sẽ được hỗ trợ ngay qua chat.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <strong>Bảo hành của từng gói được tính như thế nào?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Bảo hành được hiển thị rõ trong bảng giá. Gói Cơ Bản là 7 ngày, Tiêu Chuẩn là 30 ngày và Cao Cấp là 90 ngày kể từ thời điểm giao tài khoản thành công.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <strong>Tôi có thể dùng trên nhiều thiết bị không?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Có. Mỗi gói có giới hạn số thiết bị khác nhau. Bạn nên xem mục “Số thiết bị” trong bảng giá để chọn gói phù hợp với nhu cầu cá nhân, gia đình hoặc team nhỏ.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <strong>Nếu tìm kiếm sản phẩm thì website có trả đúng 1 kết quả không?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Có. Phần JavaScript sẽ ưu tiên lọc ra đúng một card sản phẩm phù hợp nhất theo từ khóa, đúng yêu cầu của form bạn đưa ra.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" type="button">
-                <strong>Có thể chỉnh lại nội dung, màu sắc và dữ liệu sản phẩm không?</strong>
-                <span>+</span>
-              </button>
-              <div class="faq-answer">
-                <p>Hoàn toàn được. Code được viết theo cấu trúc rõ ràng, tách section dễ sửa, nên bạn có thể thay tên sản phẩm, giá, mô tả, badge và màu sắc nhanh chóng.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="cta" id="contact">
+      <div>
+        <h2>Sẵn sàng biến trang này thành web bán tài khoản premium hoàn chỉnh?</h2>
+        <p>
+          Bạn có thể dùng luôn bố cục này để triển khai landing page, website bán hàng hoặc shop tài khoản số.
+          Giao diện đã tối ưu theo hướng hiện đại, rõ giá, dễ chốt và responsive tốt.
+        </p>
       </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <div class="cta-content">
-            <h3>Sẵn sàng biến website này thành trang bán tài khoản số thực chiến?</h3>
-            <p>
-              Giữ nguyên bố cục cao cấp, thay dữ liệu sản phẩm thật của bạn vào là có thể dùng làm landing page bán hàng,
-              bảng giá dịch vụ số, hoặc trang giới thiệu sản phẩm kỹ thuật số chuyên nghiệp.
-            </p>
-            <div class="cta-actions">
-              <a href="#pricing" class="btn btn-primary">Chọn gói ngay</a>
-              <a href="#contact" class="btn btn-ghost">Liên hệ tư vấn</a>
-            </div>
-          </div>
-
-          <div class="hero-point" style="min-width: 220px;">
-            <strong>Ưu tiên gói Tiêu Chuẩn</strong>
-            <span>Gói cân bằng tốt nhất giữa giá, thời hạn, số thiết bị và hỗ trợ kỹ thuật.</span>
-          </div>
-        </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="btn btn-primary">Nhận tư vấn</button>
+        <button class="btn btn-soft">Xem demo thêm</button>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="logo">
-            <span class="logo-mark">D</span>
-            <span class="logo-text">
-              DigitalMarket Pro
-              <small>Website tài nguyên số hiện đại</small>
-            </span>
-          </div>
-          <p>
-            Nền tảng trình bày bảng giá và sản phẩm kỹ thuật số theo phong cách thương mại điện tử chuyên nghiệp,
-            giúp tăng độ tin cậy, tăng chuyển đổi và dễ dàng tùy biến.
-          </p>
-          <div class="footer-social">
-            <a href="#">f</a>
-            <a href="#">in</a>
-            <a href="#">yt</a>
-            <a href="#">tg</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Điều hướng</h4>
-          <div class="footer-links">
-            <a href="#">Trang chủ</a>
-            <a href="#products">Sản phẩm</a>
-            <a href="#pricing">Bảng giá</a>
-            <a href="#guide">Hướng dẫn mua</a>
-            <a href="#faq">Câu hỏi thường gặp</a>
-          </div>
-        </div>
-
-        <div class="footer-col" id="policy">
-          <h4>Chính sách</h4>
-          <div class="footer-links">
-            <a href="#">Chính sách bảo hành</a>
-            <a href="#">Chính sách hoàn tiền</a>
-            <a href="#">Điều khoản sử dụng</a>
-            <a href="#">Bảo mật thông tin</a>
-            <a href="#">Hình thức thanh toán</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Liên hệ</h4>
-          <div class="footer-contact">
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">📞</div>
-              <div>
-                <strong>Hotline</strong>
-                <span>09xx.xxx.xxx</span>
-              </div>
-            </div>
-
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">✉️</div>
-              <div>
-                <strong>Email</strong>
-                <span>support@digitalmarketpro.vn</span>
-              </div>
-            </div>
-
-            <div class="footer-contact-item">
-              <div class="footer-contact-icon">📍</div>
-              <div>
-                <strong>Địa chỉ</strong>
-                <span>Hỗ trợ online toàn quốc - vận hành 24/7</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>PremiumHub</h4>
+        <p>Website bảng giá tài khoản premium với giao diện hiện đại, sạch, rõ sản phẩm và tối ưu bán hàng.</p>
       </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 DigitalMarket Pro. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Support</a>
-        </div>
+      <div>
+        <h4>Danh mục nổi bật</h4>
+        <p>Netflix Premium</p>
+        <p>Spotify Premium</p>
+        <p>Canva Pro</p>
+        <p>ChatGPT Plus</p>
+      </div>
+      <div>
+        <h4>Thông tin</h4>
+        <p>Chính sách bảo hành</p>
+        <p>Hướng dẫn mua hàng</p>
+        <p>Câu hỏi thường gặp</p>
+        <p>Liên hệ hỗ trợ</p>
+      </div>
+      <div>
+        <h4>Kết nối</h4>
+        <p>Email: support@premiumhub.vn</p>
+        <p>Hotline: 0123 456 789</p>
+        <p>Telegram / Zalo hỗ trợ nhanh</p>
+        <p>Địa chỉ: Hà Nội / TP.HCM</p>
       </div>
     </div>
   </footer>
-
-  <button class="back-to-top" id="backToTop" aria-label="Lên đầu trang">↑</button>
-
-  <script>
-    const searchForm = document.getElementById("searchForm");
-    const searchInput = document.getElementById("searchInput");
-    const searchResultBox = document.getElementById("searchResultBox");
-    const searchResultContainer = document.getElementById("searchResultContainer");
-    const searchNote = document.getElementById("searchNote");
-    const productItems = [...document.querySelectorAll(".product-item")];
-    const productGrid = document.getElementById("productGrid");
-    const toggleProductsBtn = document.getElementById("toggleProductsBtn");
-    const faqItems = document.querySelectorAll(".faq-item");
-    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-    const mobileNav = document.getElementById("mobileNav");
-    const mobileClose = document.getElementById("mobileClose");
-    const backToTop = document.getElementById("backToTop");
-
-    function normalizeText(text) {
-      return text
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d")
-        .trim();
-    }
-
-    function scoreProduct(product, keyword) {
-      const title = normalizeText(product.querySelector("h3").innerText);
-      const desc = normalizeText(product.querySelector("p").innerText);
-      const tags = normalizeText(product.dataset.keywords || "");
-      let score = 0;
-
-      if (title.includes(keyword)) score += 12;
-      if (tags.includes(keyword)) score += 10;
-      if (desc.includes(keyword)) score += 6;
-
-      keyword.split(" ").forEach((word) => {
-        if (!word) return;
-        if (title.includes(word)) score += 4;
-        if (tags.includes(word)) score += 3;
-        if (desc.includes(word)) score += 1;
-      });
-
-      return score;
-    }
-
-    function clearSearchState() {
-      searchResultBox.classList.remove("active");
-      searchResultContainer.innerHTML = "";
-      searchNote.textContent = "";
-      productGrid.style.display = "grid";
-    }
-
-    function renderSingleResult(product, keyword) {
-      const clone = product.cloneNode(true);
-      clone.classList.remove("hidden-products");
-      searchResultContainer.innerHTML = "";
-      searchResultContainer.appendChild(clone);
-      searchNote.textContent = `Kết quả tìm kiếm duy nhất cho từ khóa: "${keyword}"`;
-      searchResultBox.classList.add("active");
-      productGrid.style.display = "none";
-    }
-
-    function renderEmptyResult(keyword) {
-      searchResultContainer.innerHTML = `
-        <div class="search-empty">
-          <strong>Không tìm thấy sản phẩm phù hợp</strong>
-          <p>Chưa có kết quả chính xác cho từ khóa "${keyword}". Hãy thử với các từ như ChatGPT, Adobe, Netflix, Canva, Spotify...</p>
-        </div>
-      `;
-      searchNote.textContent = "Kết quả tìm kiếm";
-      searchResultBox.classList.add("active");
-      productGrid.style.display = "none";
-    }
-
-    searchForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const rawKeyword = searchInput.value.trim();
-      const keyword = normalizeText(rawKeyword);
-
-      if (!keyword) {
-        clearSearchState();
-        return;
-      }
-
-      let bestProduct = null;
-      let bestScore = 0;
-
-      productItems.forEach((product) => {
-        const score = scoreProduct(product, keyword);
-        if (score > bestScore) {
-          bestScore = score;
-          bestProduct = product;
-        }
-      });
-
-      if (bestProduct && bestScore > 0) {
-        renderSingleResult(bestProduct, rawKeyword);
-      } else {
-        renderEmptyResult(rawKeyword);
-      }
-    });
-
-    searchInput.addEventListener("input", function () {
-      if (!this.value.trim()) {
-        clearSearchState();
-      }
-    });
-
-    let expanded = false;
-    toggleProductsBtn.addEventListener("click", function () {
-      expanded = !expanded;
-      productGrid.classList.toggle("show-all", expanded);
-      this.textContent = expanded ? "Thu gọn sản phẩm" : "Xem thêm sản phẩm";
-    });
-
-    faqItems.forEach((item) => {
-      const btn = item.querySelector(".faq-question");
-      const answer = item.querySelector(".faq-answer");
-
-      btn.addEventListener("click", () => {
-        const isActive = item.classList.contains("active");
-
-        faqItems.forEach((faq) => {
-          faq.classList.remove("active");
-          faq.querySelector(".faq-answer").style.maxHeight = null;
-        });
-
-        if (!isActive) {
-          item.classList.add("active");
-          answer.style.maxHeight = answer.scrollHeight + "px";
-        }
-      });
-    });
-
-    mobileMenuBtn.addEventListener("click", () => {
-      mobileNav.classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
-
-    mobileClose.addEventListener("click", () => {
-      mobileNav.classList.remove("active");
-      document.body.style.overflow = "";
-    });
-
-    mobileNav.addEventListener("click", (e) => {
-      if (e.target === mobileNav) {
-        mobileNav.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-    });
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        backToTop.classList.add("show");
-      } else {
-        backToTop.classList.remove("show");
-      }
-    });
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    });
-  </script>
 </body>
 </html>
