@@ -406,6 +406,27 @@
     }
     .footer p { line-height: 1.8; margin: 6px 0; }
 
+    .hidden-by-search {
+      display: none !important;
+    }
+    .search-empty {
+      text-align: center;
+      padding: 28px 18px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 20px;
+      background: #fff;
+      color: #64748b;
+      margin-top: 18px;
+    }
+    .search-empty strong {
+      color: #0f172a;
+    }
+    .search-highlight {
+      border: 2px solid #2563eb !important;
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18) !important;
+      transform: translateY(-4px);
+    }
+
     @media (max-width: 1200px) {
       .category-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .grid-4, .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -445,8 +466,8 @@
   <header class="header">
     <div class="logo">TIEM<span> NHA BONG</span></div>
     <div class="search">
-      <input type="text" placeholder="Tìm Netflix, Spotify, YouTube Premium, Canva, ChatGPT, CapCut..." />
-      <button>Tìm kiếm</button>
+      <input id="searchInput" type="text" placeholder="Tìm Netflix, Spotify, YouTube Premium, Canva, ChatGPT, CapCut..." />
+      <button id="searchButton" type="button">Tìm kiếm</button>
     </div>
     <div class="header-actions">
       <div class="pill">Yêu thích</div>
@@ -525,32 +546,32 @@
         <span class="muted">Thiết kế dạng card bo góc, hiện đại, dễ nhìn</span>
       </div>
       <div class="category-row">
-        <div class="card category-card">
+        <div class="card category-card searchable-item" data-search="giai tri netflix youtube disney fpt play vieon hbo max danh muc">
           <div class="icon-box">🎬</div>
           <h3>Giải trí</h3>
           <p class="muted">Netflix, Youtube , Disney+, FPT Play, VieON, HBO Max...</p>
         </div>
-        <div class="card category-card">
+        <div class="card category-card searchable-item" data-search="am nhac spotify youtube music apple music danh muc">
           <div class="icon-box">🎵</div>
           <h3>Âm nhạc</h3>
           <p class="muted">Spotify Premium, YouTube Music, Apple Music...</p>
         </div>
-        <div class="card category-card">
+        <div class="card category-card searchable-item" data-search="lam viec microsoft 365 notion ai grammarly zoom pro danh muc">
           <div class="icon-box">💼</div>
           <h3>Làm việc</h3>
           <p class="muted">Microsoft 365, Notion AI, Grammarly, Zoom Pro...</p>
         </div>
-        <div class="card category-card">
+        <div class="card category-card searchable-item" data-search="thiet ke canva adobe envato danh muc">
           <div class="icon-box">🎨</div>
           <h3>Thiết kế</h3>
           <p class="muted">Canva Pro, Adobe CC, Envato Elements...</p>
         </div>
-        <div class="card category-card">
+        <div class="card category-card searchable-item" data-search="ai tools chatgpt claude midjourney elevenlabs danh muc">
           <div class="icon-box">🤖</div>
           <h3>AI Tools</h3>
           <p class="muted">ChatGPT Plus, Claude, Midjourney, ElevenLabs...</p>
         </div>
-        <div class="card category-card">
+        <div class="card category-card searchable-item" data-search="hoc tap duolingo coursera udemy quizlet danh muc">
           <div class="icon-box">📚</div>
           <h3>Học tập</h3>
           <p class="muted">Duolingo, Coursera, Udemy, Quizlet Plus...</p>
@@ -564,7 +585,7 @@
         <span class="muted">Phần trọng tâm để bán hàng rõ sản phẩm</span>
       </div>
       <div class="grid grid-3">
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="meitu vip meitu vip+ app chinh anh video all in one">
           <span class="badge badge-hot">Hot</span>
           <h3>Meitu VIP+</h3>
           <p class="muted">App “all-in-one”, dùng được cho cả ảnh lẫn video.</p>
@@ -582,7 +603,7 @@
           </div>
         </div>
 
-        <div class="card account-card highlight">
+        <div class="card account-card highlight searchable-item" data-search="wink vip wink vip+ edit video ai lam net xoa vat the">
           <span class="badge">Phổ biến</span>
           <h3>Wink Vip+</h3>
           <p class="muted">Hợp bạn quay video nhiều, cần edit xịn hơn.</p>
@@ -600,7 +621,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="hypic app anh story feed han chill nghe">
           <span class="badge badge-new">Mới</span>
           <h3>Hypic</h3>
           <p class="muted">Hợp làm ảnh story, feed kiểu Hàn – chill – nghệ.</p>
@@ -618,7 +639,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="xinghui ai ghep mat trend tiktok trung co trang idol">
           <span class="badge badge-new">Mới</span>
           <h3>XINGHUI</h3>
           <p class="muted">Hợp bạn thích ảnh “biến hình”, sống ảo nhanh, bắt trend TikTok.</p>
@@ -636,7 +657,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="xingtu xing tu chinh anh studio da body makeup">
           <span class="badge badge-new">Mới</span>
           <h3>XingTu</h3>
           <p class="muted">Phù hợp chỉnh ảnh kỹ, muốn ảnh đẹp như studio.</p>
@@ -654,7 +675,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="youtube premium youtube khong quang cao phat nen tai video">
           <span class="badge badge-new">Mới</span>
           <h3>YouTube Premium</h3>
           <p class="muted">Xem YouTube không quảng cáo, phát nền, tải video.</p>
@@ -672,7 +693,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="canva pro thiet ke banner post social template">
           <span class="badge">Thiết kế</span>
           <h3>Canva Pro</h3>
           <p class="muted">Kho template lớn, xóa nền, resize, brand kit.</p>
@@ -690,7 +711,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="chatgpt plus ai hoc tap cong viec viet noi dung">
           <span class="badge badge-hot">AI</span>
           <h3>ChatGPT Plus</h3>
           <p class="muted">Hỗ trợ học tập, viết nội dung, nghiên cứu và làm việc nhanh hơn.</p>
@@ -708,7 +729,7 @@
           </div>
         </div>
 
-        <div class="card account-card">
+        <div class="card account-card searchable-item" data-search="capcut pro video tiktok reels shorts">
           <span class="badge">Video</span>
           <h3>CapCut Pro</h3>
           <p class="muted">Mở khóa hiệu ứng, template và công cụ chỉnh sửa nâng cao.</p>
@@ -725,6 +746,9 @@
             <button class="btn btn-soft" style="flex:1;">Chi tiết</button>
           </div>
         </div>
+      </div>
+      <div id="searchEmptyState" class="search-empty" style="display:none;">
+        Không tìm thấy sản phẩm phù hợp với từ khóa <strong id="searchKeyword"></strong>.
       </div>
     </section>
 
@@ -748,7 +772,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="searchable-item" data-search="netflix premium profile rieng xem phim giai tri">
               <td>Netflix Premium</td>
               <td>1 tháng</td>
               <td>Profile riêng</td>
@@ -756,7 +780,7 @@
               <td>119.000đ</td>
               <td>Xem phim, giải trí</td>
             </tr>
-            <tr>
+            <tr class="searchable-item" data-search="spotify premium nghe nhac hang ngay tai khoan rieng">
               <td>Spotify Premium</td>
               <td>4 tháng</td>
               <td>Tài khoản riêng</td>
@@ -764,7 +788,7 @@
               <td>239.000đ</td>
               <td>Nghe nhạc hằng ngày</td>
             </tr>
-            <tr>
+            <tr class="searchable-item" data-search="canva pro thiet ke ban hang join team account">
               <td>Canva Pro</td>
               <td>1 tháng</td>
               <td>Join team / account</td>
@@ -772,7 +796,7 @@
               <td>35.000đ</td>
               <td>Thiết kế bán hàng</td>
             </tr>
-            <tr>
+            <tr class="searchable-item" data-search="chatgpt plus ai hoc tap cong viec acc cap">
               <td>ChatGPT Plus</td>
               <td>1 tháng</td>
               <td>Acc Cấp</td>
@@ -780,7 +804,7 @@
               <td>174.000đ</td>
               <td>AI học tập / công việc</td>
             </tr>
-            <tr>
+            <tr class="searchable-item" data-search="capcut pro dung video ngan account premium">
               <td>CapCut Pro</td>
               <td>1 tháng</td>
               <td>Account premium</td>
@@ -897,5 +921,77 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const searchableItems = document.querySelectorAll('.searchable-item');
+    const searchEmptyState = document.getElementById('searchEmptyState');
+    const searchKeyword = document.getElementById('searchKeyword');
+    const pricingSection = document.getElementById('pricing');
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/đ/g, 'd')
+        .trim();
+    }
+
+    function runSearch() {
+      const keyword = normalizeText(searchInput.value);
+      let matchCount = 0;
+
+      searchableItems.forEach((item) => {
+        item.classList.remove('search-highlight', 'hidden-by-search');
+
+        if (!keyword) {
+          return;
+        }
+
+        const itemText = normalizeText((item.dataset.search || '') + ' ' + item.textContent);
+        const matched = itemText.includes(keyword);
+
+        if (matched) {
+          item.classList.add('search-highlight');
+          matchCount++;
+        } else {
+          item.classList.add('hidden-by-search');
+        }
+      });
+
+      if (!keyword) {
+        searchEmptyState.style.display = 'none';
+        return;
+      }
+
+      if (matchCount > 0) {
+        searchEmptyState.style.display = 'none';
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        searchKeyword.textContent = searchInput.value.trim();
+        searchEmptyState.style.display = 'block';
+        pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    searchButton.addEventListener('click', runSearch);
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        runSearch();
+      }
+    });
+
+    searchInput.addEventListener('input', () => {
+      if (!searchInput.value.trim()) {
+        searchableItems.forEach((item) => {
+          item.classList.remove('search-highlight', 'hidden-by-search');
+        });
+        searchEmptyState.style.display = 'none';
+      }
+    });
+  </script>
+
 </body>
 </html>
